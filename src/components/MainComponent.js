@@ -1,29 +1,32 @@
-import { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import React, { Component } from 'react';
+import { Jumbotron } from 'reactstrap';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Home from './HomeComponent';
+import Data from './DataComponent';
+import Header from './NavBarWithSearch';
 
 class Main extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {};
-    }
-
     render() {
+
         return (
-            <div className="col">
-                <Card className="m-3">
-                    <CardBody>
-                        <CardTitle><h2>Card title</h2></CardTitle>
-                        <CardText>
-                            <div>
-                                <p>This is some text</p>
-                                <button className="btn btn-primary">some button</button>
+            <>
+                <Jumbotron>
+                    <div className="container">
+                        <div className="row row-header">
+                            <div className="col-12 col-sm-6">
+                                <h1>Get The Weather</h1>
+                                <p>Pick a City</p>
                             </div>
-                        </CardText>
-                    </CardBody>
-                </Card>
-            </div>
+                        </div>
+                    </div>
+                </Jumbotron>
+                <Router>
+                    <Header />
+                    <Route exact path="/" component={Home} />
+                    <Route path="/Data" component={Data} />
+                </Router>
+            </>
         );
     }
 }
