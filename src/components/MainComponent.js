@@ -4,10 +4,14 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './HomeComponent';
 import Data from './DataComponent';
 import Header from './NavBarWithSearch';
+import { connect } from 'react-redux';
+import { fetchWeather } from '../Actions/Actions';
 
 class Main extends Component {
 
     render() {
+
+        // console.log(this.props);
 
         return (
             <>
@@ -22,13 +26,22 @@ class Main extends Component {
                     </div>
                 </Jumbotron>
                 <Router>
-                    <Header />
-                    <Route exact path="/" component={Home} />
-                    <Route path="/Data" component={Data} />
+                    <Header search={this.props.fetchWeather}/>
+                    <Route exact path="/" component={() => <Home data={this.props}/>} />
+                    <Route path="/Data" component={() => <Data data={this.props} />} />
                 </Router>
             </>
         );
     }
 }
 
-export default Main;
+const mapStateToProps = state => ({
+    weather: state.weather,
+    errMess: state.errMess
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchWeather: (cityName) => { dispatch(fetchWeather(cityName)) }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

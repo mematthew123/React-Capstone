@@ -1,16 +1,30 @@
-/* .row-header{
-  margin:0px auto;
-  padding:0px auto;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
 .jumbotron {
-  padding:70px 30px 70px 30px;
+  padding:60px 30px 60px 30px;
   margin:0px auto;
   background: #aaaaaa ;
   color:rgb(0, 0, 0);
 }
 
-.jumbotron {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
+.div1 {
+    background: url('https://cdn5.vectorstock.com/i/1000x1000/26/99/paper-clouds-and-blue-sky-background-vector-21352699.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: local;
+    border-radius: 15px
+}
+
+h1 {
+    font-size: 65px
+}
+
+sup {
+    font-size: 17px;
+    position: relative;
+    top: -2rem
+}
+
+*:focus {
+    outline: none
 }

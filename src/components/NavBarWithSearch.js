@@ -5,14 +5,8 @@ import { Control, LocalForm } from 'react-redux-form';
 
 class Header extends Component {
 
-    constructor(props) {
-        super(props);
-
-
-    }
-
     handleSearch(values) {
-        console.log(values);
+        this.props.search(values.city);
     }
 
     render() {
@@ -24,18 +18,24 @@ class Header extends Component {
                             <NavLink className="nav-link" to="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link" to="/data">Data</NavLink>
+                            <NavLink className="nav-link" to="/data">Weather</NavLink>
                         </NavItem>
                     </Nav>
-                    <Nav navbar className="ml-auto">
+                    <Nav navbar >
                         <LocalForm onSubmit={(values) => this.handleSearch(values)}>
-                            <Row className="m-1">
-                                <Col>
-                                    <Control.text model=".city" id="city" name="city" placeholder="Enter City" className="form-control" />
-                                </Col>
-                                <Col>
-                                    <button type="submit" className="btn btn-outline-success">Submit</button>
-                                </Col>
+                            <Row>
+                                <div className="d-flex">
+                                    <div className="ml-auto p-2">
+                                        <Col>
+                                            <Control.text model=".city" id="city" name="city" placeholder="Enter City" className="form-control" />
+                                        </Col>
+                                    </div>
+                                    <div className="ml-auto p-2">
+                                        <Col>
+                                            <button type="submit" className="btn btn-outline-success">Submit</button>
+                                        </Col>
+                                    </div>
+                                </div>
                             </Row>
                         </LocalForm>
                     </Nav>
