@@ -2,6 +2,7 @@
 
 # WireFrame
 
+![WireFrame](https://github.com/kevin-k-1984/Merit-Bank-React-Capstone/blob/master/images/Merit%20Bank%20App.png)
 
 # Yarn
 
