@@ -19,8 +19,7 @@ class Main extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>Get The Weather</h1>
-                                <p>Pick a City</p>
+                                <h1>Merit Bank</h1>
                             </div>
                         </div>
                     </div>
