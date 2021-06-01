@@ -1,3 +1,4 @@
+import React from 'react';
 
 function Data(props) {
     // console.log(props.data.weather);

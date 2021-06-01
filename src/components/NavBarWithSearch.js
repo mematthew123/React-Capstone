@@ -1,7 +1,6 @@
-import { Component } from "react";
-import { Navbar, NavItem, Nav, Row, Col } from 'reactstrap';
+import React, { Component } from "react";
+import { Navbar, NavItem, Nav } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { Control, LocalForm } from 'react-redux-form';
 
 class Header extends Component {
 
@@ -22,7 +21,7 @@ class Header extends Component {
                         </NavItem>
                     </Nav>
                     <Nav navbar >
-                        <LocalForm onSubmit={(values) => this.handleSearch(values)}>
+                        {/* <LocalForm onSubmit={(values) => this.handleSearch(values)}>
                             <Row>
                                 <div className="d-flex">
                                     <div className="ml-auto p-2">
@@ -37,7 +36,7 @@ class Header extends Component {
                                     </div>
                                 </div>
                             </Row>
-                        </LocalForm>
+                        </LocalForm> */}
                     </Nav>
                 </div>
             </Navbar>

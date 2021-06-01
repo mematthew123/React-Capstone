@@ -14,7 +14,7 @@ class Main extends Component {
         // console.log(this.props);
 
         return (
-            <>
+            <React.Fragment>
                 <Jumbotron>
                     <div className="container">
                         <div className="row row-header">
@@ -29,7 +29,7 @@ class Main extends Component {
                     <Route exact path="/" component={() => <Home data={this.props}/>} />
                     <Route path="/Data" component={() => <Data data={this.props} />} />
                 </Router>
-            </>
+            </React.Fragment>
         );
     }
 }

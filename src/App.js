@@ -1,3 +1,4 @@
+import React from 'react';
 import Main from './components/MainComponent';
 import './App.css';
 import { createStore, applyMiddleware } from 'redux';
