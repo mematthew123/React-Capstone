@@ -1,19 +1,43 @@
 import React from 'react';
 
-function UserDashboard(props) {
+// function sendAuth(props) {
+//     console.log("hello");
+//     props.loginMethod('admin', 'admin');
+//     console.log(props);
+// }
 
-    return (
-        <div className="container-fluid">
-            <div className="row" id="userDashboardDiv">
-                <div className="col-3" id="accountDisplayDiv">
+class UserDashboard extends React.Component {
 
-                </div>
-                <div className="col-9" id="userDisplayDiv">
-                    <h1 id="welcomMessege">Welcome To Merit Bank</h1>
+    constructor(props) {
+        super(props);
+
+        this.sendAuth = this.sendAuth.bind(this);
+        this.printProps = this.printProps.bind(this);
+    }
+
+    sendAuth() {
+        this.props.loginMethod('admin', 'admin');
+    }
+
+    printProps() {
+        console.log(this.props);
+    }
+
+    render() {
+        return (
+            <div className="container-fluid">
+                <div className="row" id="userDashboardDiv">
+                    <div className="col-3" id="accountDisplayDiv">
+                        <button className="btn btn-primary" onClick={this.sendAuth}>Get JWT</button>
+                        <button className="btn btn-primary" onClick={this.printProps}>Print Props</button>
+                    </div>
+                    <div className="col-9" id="userDisplayDiv">
+                        <h1 id="welcomMessege">Welcome To Merit</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default UserDashboard;

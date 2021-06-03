@@ -1,33 +1,39 @@
 import * as ActionTypes from '../Actions/Types';
 
-const loginUrl = 'localhost:3000/';
-const API_KEY = '&units=imperial&appid=8546481bde1b68d96d587ecfdfc0fc2d';
+const loginUrl = 'http://localhost:8080/authenticate';
+
+const postRequestConfig = (body) => {
+    return {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    }
+};
 
 export const login = (username, password) => (dispatch) => {
 
-    // fetch(baseUrl + cityName + API_KEY)
-    // .then(response => response.json())
-    // .then(data => console.log(data.main.temp));
+    return fetch(loginUrl, postRequestConfig({ password: password, username: username }))
+        .then(response => {
+            if (response.ok) {
+                return response;
+            }
+            else {
+                var error = new Error('Error ' + response.status + ':' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(Response => Response.json())
+        .then(token => dispatch(addJWT(token)))
+        .catch(error => dispatch(loginFailed(error.message)));
 
-    fetch(loginUrl)
-    .then(response => {
-        if (response.ok) {
-            return response;
-        }
-        else {
-            var error = new Error('Error ' + response.status + ':' + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    },
-        error => {
-            var errmess = new Error(error.message);
-            throw errmess;
-        })
-    .then(Response => Response.json())
-    .then(token => dispatch(addJWT(token)))
-    .catch(error => dispatch(loginFailed(error.message)));
-
+        
 }
 
 export const addJWT = (token) => ({

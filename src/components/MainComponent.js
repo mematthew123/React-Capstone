@@ -14,7 +14,7 @@ class Main extends Component {
             <React.Fragment>
                 <Router>
                     <Header search={this.props.login}/>
-                    <Route exact path="/" component={() => <UserDashboard />} />
+                    <Route exact path="/" component={() => <UserDashboard loginMethod={this.props.login} jwt={this.props.JWT} />} />
                 </Router>
             </React.Fragment>
         );
@@ -22,7 +22,7 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-    JWT: '',
+    JWT: state.JWT,
     errMess: state.errMess
 });
 
