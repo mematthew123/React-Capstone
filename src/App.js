@@ -3,10 +3,10 @@ import Main from './components/MainComponent';
 import './App.css';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { weather } from './Reducers/Weather';
+import { login } from './Reducers/Login';
 import thunk from 'redux-thunk';
 
-const store = createStore(weather, applyMiddleware(thunk));
+const store = createStore(login, applyMiddleware(thunk));
 
 function App() {
   return (

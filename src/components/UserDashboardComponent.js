@@ -9,7 +9,7 @@ function UserDashboard(props) {
 
                 </div>
                 <div className="col-9" id="userDisplayDiv">
-                    <h1 id="welcomMessege">Welcome {props.name}</h1>
+                    <h1 id="welcomMessege">Welcome To Merit Bank</h1>
                 </div>
             </div>
         </div>

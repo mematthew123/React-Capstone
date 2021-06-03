@@ -1,2 +1,2 @@
-export const FETCH_WEATHER = 'FETCH_WEATHER';
-export const WEATHER_FAILED = 'WEATHER_FAILED';
+export const LOGIN = 'LOGIN';
+export const LOGIN_FAILED = 'LOGIN_FAILED';

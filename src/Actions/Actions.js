@@ -1,15 +1,15 @@
 import * as ActionTypes from '../Actions/Types';
 
-const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const loginUrl = 'localhost:3000/';
 const API_KEY = '&units=imperial&appid=8546481bde1b68d96d587ecfdfc0fc2d';
 
-export const fetchWeather = (cityName) => (dispatch) => {
+export const login = (username, password) => (dispatch) => {
 
     // fetch(baseUrl + cityName + API_KEY)
     // .then(response => response.json())
     // .then(data => console.log(data.main.temp));
 
-    fetch(baseUrl + cityName + API_KEY)
+    fetch(loginUrl)
     .then(response => {
         if (response.ok) {
             return response;
@@ -25,17 +25,17 @@ export const fetchWeather = (cityName) => (dispatch) => {
             throw errmess;
         })
     .then(Response => Response.json())
-    .then(data => dispatch(addWeather(data)))
-    .catch(error => dispatch(weatherFailed(error.message)));
+    .then(token => dispatch(addJWT(token)))
+    .catch(error => dispatch(loginFailed(error.message)));
 
 }
 
-export const addWeather = (weather) => ({
-    type: ActionTypes.FETCH_WEATHER,
-    payload: weather
+export const addJWT = (token) => ({
+    type: ActionTypes.LOGIN,
+    payload: token
 });
 
-export const weatherFailed = (errMess) => ({
-    type: ActionTypes.WEATHER_FAILED,
+export const loginFailed = (errMess) => ({
+    type: ActionTypes.LOGIN_FAILED,
     payload: errMess
 });
