@@ -12,14 +12,14 @@ class Header extends Component {
         return (
             <Navbar expand="md">
                 <div className="container">
-                    <Nav navbar>
+                    {/* <Nav navbar>
                         <NavItem>
                             <NavLink className="nav-link" to="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/data">Weather</NavLink>
                         </NavItem>
-                    </Nav>
+                    </Nav> */}
                     <Nav navbar >
                         {/* <LocalForm onSubmit={(values) => this.handleSearch(values)}>
                             <Row>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Data(props) {
+function Login(props) {
     // console.log(props.data.weather);
     return (
         <div></div>
     );
 }
 
-export default Data;
+export default Login;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Jumbotron } from 'reactstrap';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './HomeComponent';
-import Data from './DataComponent';
+import Data from './LoginComponent';
 import Header from './NavBarWithSearch';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../Actions/Actions';
@@ -26,8 +26,6 @@ class Main extends Component {
                 </Jumbotron>
                 <Router>
                     <Header search={this.props.fetchWeather}/>
-                    <Route exact path="/" component={() => <Home data={this.props}/>} />
-                    <Route path="/Data" component={() => <Data data={this.props} />} />
                 </Router>
             </React.Fragment>
         );
