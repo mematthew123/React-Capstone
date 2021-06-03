@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Jumbotron } from 'reactstrap';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import Home from './HomeComponent';
-import Data from './LoginComponent';
-import Header from './NavBarWithSearch';
+import UserDashboard from './UserDashboardComponent';
+import Login from './LoginComponent';
+import Header from './Header';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../Actions/Actions';
 
@@ -11,21 +10,11 @@ class Main extends Component {
 
     render() {
 
-        // console.log(this.props);
-
         return (
             <React.Fragment>
-                <Jumbotron>
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>Merit Bank</h1>
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
                 <Router>
                     <Header search={this.props.fetchWeather}/>
+                    <Route exact path="/" component={() => <UserDashboard name={this.props.name} />} />
                 </Router>
             </React.Fragment>
         );
@@ -34,7 +23,8 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
     weather: state.weather,
-    errMess: state.errMess
+    errMess: state.errMess,
+    name: "kevin"
 });
 
 const mapDispatchToProps = (dispatch) => ({
