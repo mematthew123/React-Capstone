@@ -32,7 +32,6 @@ export const login = (username, password) => (dispatch) => {
         .then(Response => Response.json())
         .then(token => dispatch(addJWT(token)))
         .catch(error => dispatch(loginFailed(error.message)));
-
         
 }
 

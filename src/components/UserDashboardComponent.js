@@ -5,12 +5,7 @@ class UserDashboard extends React.Component {
     constructor(props) {
         super(props);
 
-        this.sendAuth = this.sendAuth.bind(this);
         this.printProps = this.printProps.bind(this);
-    }
-
-    sendAuth() {
-        this.props.loginMethod('admin', 'admin');
     }
 
     printProps() {
@@ -22,7 +17,6 @@ class UserDashboard extends React.Component {
             <div className="container-fluid">
                 <div className="row" id="userDashboardDiv">
                     <div className="col-3" id="accountDisplayDiv">
-                        <button className="btn btn-primary" onClick={this.sendAuth}>Get JWT</button>
                         <button className="btn btn-primary" onClick={this.printProps}>Print Props</button>
                     </div>
                     <div className="col-9" id="userDisplayDiv">

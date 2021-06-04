@@ -1,7 +1,5 @@
 import React from 'react';
 
-//not sure if needed create account or just sign in??
-
 class Login extends React.Component {
 
   constructor(props) {
@@ -30,15 +28,18 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
 
-    this.props.loginMethod('admin', this.state.password);
+    console.log(this.componentRef.current);
+
+    this.props.parent.login('admin', this.state.password);
+
+    this.props.parent.history.push('/user');
 
     this.setState({
       email: '',
       password: ''
     });
-
-    event.preventDefault();
 
   }
 
@@ -47,7 +48,7 @@ class Login extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} >
               <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
               <div className="form-group">
                 <label className="sr-only">Email address</label>
@@ -58,11 +59,11 @@ class Login extends React.Component {
                 <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
               </div>
               <input className="btn btn-primary" type="submit" value="Sign in" />
+              <button className="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </form>
           </div>
         </div>
       </div>
-
     );
   }
 }
