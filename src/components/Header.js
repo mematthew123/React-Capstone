@@ -12,9 +12,9 @@ class Header extends Component {
         return (
             <div>
                 <nav className="navbar navbar-light bg-light justify-content-between">
-                    <a className="navbar-brand" href="#">
+                    <NavLink className="nav-link" to="/home">
                         <img src="/MeritBankLogoNew.png" height="80rem" alt="" />
-                    </a>
+                    </NavLink>
                     <button className="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Login</button>
                 </nav>
 

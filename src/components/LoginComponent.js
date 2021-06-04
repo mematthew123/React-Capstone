@@ -30,8 +30,6 @@ class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log(this.componentRef.current);
-
     this.props.parent.login('admin', this.state.password);
 
     this.props.parent.history.push('/user');
