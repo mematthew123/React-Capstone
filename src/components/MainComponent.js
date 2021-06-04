@@ -9,12 +9,12 @@ import { login } from '../Actions/Actions';
 class Main extends Component {
 
     render() {
-
         return (
             <React.Fragment>
                 <Router>
-                    <Header search={this.props.login}/>
-                    <Route exact path="/" component={() => <UserDashboard loginMethod={this.props.login} jwt={this.props.JWT} />} />
+                    <Header Token={this.props.JWT}/>
+                    <Route exact path="/" component={() => <Login loginMethod={this.props.login} />} />
+                    <Route exact path="/user" component={() => <UserDashboard loginMethod={this.props.login} />} />
                 </Router>
             </React.Fragment>
         );

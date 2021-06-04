@@ -3,13 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
 
-    handleSearch(values) {
-        this.props.search(values.city);
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
-            <div></div>
+            <div>
+                <p>JWT: {this.props.Token}</p>
+            </div>
         );
     }
 }

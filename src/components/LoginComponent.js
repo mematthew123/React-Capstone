@@ -2,25 +2,69 @@ import React from 'react';
 
 //not sure if needed create account or just sign in??
 
-function Login(props) {
-    // console.log(props.data.weather);
-    return (
-       
-        <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-0 text-muted">&copy; 2021</p>
-        
-      </form>
-    )
+class Login extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      password: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+
+    switch (event.target.type) {
+      case 'email':
+        this.setState({ email: event.target.value });
+        break;
+      case 'password':
+        this.setState({ password: event.target.value });
+        break;
     }
+
+  }
+
+  handleSubmit(event) {
+
+    this.props.loginMethod('admin', this.state.password);
+
+    this.setState({
+      email: '',
+      password: ''
+    });
+
+    event.preventDefault();
+
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col">
+            <form onSubmit={this.handleSubmit}>
+              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+              <div className="form-group">
+                <label className="sr-only">Email address</label>
+                <input type="email" className="form-control" placeholder="Email address" value={this.state.email} onChange={this.handleChange} required />
+              </div>
+              <div className="form-group">
+                <label className="sr-only">Password</label>
+                <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
+              </div>
+              <input className="btn btn-primary" type="submit" value="Sign in" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+    );
+  }
+}
+
 export default Login;

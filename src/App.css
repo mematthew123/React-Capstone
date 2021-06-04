@@ -50,13 +50,13 @@
             0 0 8rem var(--neon-text-color),
             0 0 10rem var(--neon-text-color);
         
-        box-shadow:
-            0 0 .5rem #fff,
-            inset 0 0 .5rem #fff,
-            0 0 1rem var(--neon-border-color),
-            inset 0 0 1rem var(--neon-border-color),
-            0 0 4rem var(--neon-border-color),
-            inset 0 0 3rem var(--neon-border-color);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 1rem var(--neon-border-color),
+        inset 0 0 1rem var(--neon-border-color),
+        0 0 4rem var(--neon-border-color),
+        inset 0 0 3rem var(--neon-border-color);
 
 }
 

@@ -1,11 +1,5 @@
 import React from 'react';
 
-// function sendAuth(props) {
-//     console.log("hello");
-//     props.loginMethod('admin', 'admin');
-//     console.log(props);
-// }
-
 class UserDashboard extends React.Component {
 
     constructor(props) {
