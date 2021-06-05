@@ -11,7 +11,7 @@ function AccountPreview(props) {
             </div>
             <hr />
             <div className="card-body">
-                <p>Some accoutn Info</p>
+                <p>Some account Info</p>
             </div>
         </div>
     );
