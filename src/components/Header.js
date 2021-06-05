@@ -6,8 +6,43 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-    }
-
+    
+        this.state = {
+          email: '',
+          password: ''
+        };
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    
+      }
+    
+      handleChange(event) {
+         
+        switch (event.target.type) {
+          case 'email':
+            this.setState({ email: event.target.value });
+            break;
+          case 'password':
+            this.setState({ password: event.target.value });
+            break;
+        }
+    
+      }
+    
+      handleClick(event) {
+        event.preventDefault();
+    
+        this.props.parent.login('admin', this.state.password);
+    
+        this.props.parent.history.push('/user');
+    
+        this.setState({
+          email: '',
+          password: ''
+        });
+    
+      }
     render() {
         return (
             <div>
@@ -26,35 +61,42 @@ class Header extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Welcome Back</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <h5 className="modal-title" id="exampleModalLabel">Login /Sign up</h5>
+                               
                             </div>
                             <div className="modal-body">
 
 
-                                <div class="form-outline">
-                                    <input type="text" id="formControlDefault" class="form-control" />
-                                    <label class="form-label" for="formControlDefault">Email address </label>
+                                <div className="form-outline">
+                                    <input type="text" id="email" className="form-control" onChange={this.handleChange}/>
+
+
+                                    
+                                    <label className="form-label" htmlFor="formControlDefault">Email address </label>
                                 </div>
 
 
-                                <div class="form-outline">
-                                    <input type="text" id="formControlDefault" class="form-control" />
-                                    <label class="form-label" for="formControlDefault">Password</label>
+                                <div className="form-outline">
+                                    <input type="text" id="password" className="form-control" onChange={this.handleChange}/> 
+                                   
+                                    <label className="form-label" htmlFor="formControlDefault">Password</label>
                                 </div>
 
 
-                                          ...
+
+
+
+
+                                          
 
                                 </div>
                             <div className="modal-footer">
 
 
 
-                                <button type="button" className="btn btn-primary" data-dismiss="modal">Login</button>
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Nah'</button>
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleClick}>Login</button>
+                             
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
                             </div>
                         </div>
