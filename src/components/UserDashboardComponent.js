@@ -5,6 +5,12 @@ class UserDashboard extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(props) {
+        console.log(props);
     }
 
     render() {
@@ -18,6 +24,7 @@ class UserDashboard extends React.Component {
                     </div>
                     <div className="col-9" id="userDisplayDiv">
                         <h1 id="welcomMessege">Welcome To Merit</h1>
+                        <button className="btn btn-light" onClick={() => this.handleClick(this.props)} >Print Props</button>
                     </div>
                 </div>
             </div>
