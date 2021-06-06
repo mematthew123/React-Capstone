@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, withRouter, Switch, Redirect } from 're
 import UserDashboard from './UserDashboardComponent';
 import AdminDashboard from './AdminDashboardComponent';
 import Header from './Header';
+import Footer from './Footer';
 import { connect } from 'react-redux';
 import { login } from '../Actions/Actions';
 

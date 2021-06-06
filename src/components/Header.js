@@ -54,6 +54,14 @@ class Header extends Component {
                     <button className="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Login</button>
                 </nav>
 
+
+                <nav class="navbar fixed-bottom navbar-light bg-white">
+                <a class="navbar-brand" href="#"></a>
+                <a href="https://www.capitalone.com/support-center/contact-us/" class="site-footer__link" target="_self" rel="">Contact Us</a>
+              </nav>
+
+
+
                 <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -73,11 +81,22 @@ class Header extends Component {
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleClick}>Login</button>
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            </div>
+                         
+                               </div>
+
+
+                              
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+            
+
+
         );
     }
 }
