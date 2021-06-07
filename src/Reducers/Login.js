@@ -1,17 +1,12 @@
 import * as ActionTypes from '../Actions/Types';
 
-export const login = (state = initialState, action) => {
+export const Login = (state = {jwt: '', role: '', errMess: ''}, action) => {
   switch (action.type) {
     case ActionTypes.LOGIN:
-      return { ...state, JWT: action.payload, errMess: '' };
+      return { ...state, jwt: action.payload.jwt, role: action.payload.role, errMess: '' };
     case ActionTypes.LOGIN_FAILED:
-      return { ...state, errMess: action.payload, JWT: '' };
+      return { ...state, errMess: action.payload, jwt: '', role: '' };
     default:
       return state;
   }
-}
-
-const initialState = {
-  JWT: [],
-  errMess: ''
 }

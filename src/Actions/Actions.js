@@ -30,12 +30,12 @@ export const login = (username, password) => (dispatch) => {
                 throw errmess;
             })
         .then(Response => Response.json())
-        .then(token => dispatch(addJWT(token)))
+        .then(token => dispatch(addAuthResponse(token)))
         .catch(error => dispatch(loginFailed(error.message)));
         
 }
 
-export const addJWT = (token) => ({
+export const addAuthResponse = (token) => ({
     type: ActionTypes.LOGIN,
     payload: token
 });

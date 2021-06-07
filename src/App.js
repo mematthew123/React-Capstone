@@ -1,24 +1,29 @@
-import React from 'react';
-import Main from './components/MainComponent';
-import './App.css';
-import { createStore, applyMiddleware } from 'redux';
+import React, { Component } from 'react';
+import Main from './Components/Main';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { login } from './Reducers/Login';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './Reducers/ConfigureStore'
+import { Login } from './Reducers/Login';
+import './App.css';
 
-const store = createStore(login, applyMiddleware(thunk));
+//const store = createStore(Login, applyMiddleware(thunk));
+const store = ConfigureStore();
 
-function App() {
-  return (
-    <div>
+class App extends Component {
+
+  render() {
+    return (
       <Provider store={store}>
         <BrowserRouter>
-          <Main />
+          <div>
+            <Main />
+          </div>
         </BrowserRouter>
       </Provider>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
