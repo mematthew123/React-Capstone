@@ -55,10 +55,7 @@ class Header extends Component {
                 </nav>
 
 
-                <nav class="navbar fixed-bottom navbar-light bg-white">
-                <a class="navbar-brand" href="#"></a>
-                <a href="https://www.capitalone.com/support-center/contact-us/" class="site-footer__link" target="_self" rel="">Contact Us</a>
-              </nav>
+                
 
 
 

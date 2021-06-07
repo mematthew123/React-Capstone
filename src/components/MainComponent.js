@@ -5,7 +5,6 @@ import AdminDashboard from './AdminDashboardComponent';
 import Header from './Header';
 import { connect } from 'react-redux';
 import { login } from '../Actions/Actions';
-
 class Main extends Component {
 
     render() {
