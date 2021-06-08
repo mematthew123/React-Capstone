@@ -8,7 +8,6 @@ import { ConfigureStore } from './Reducers/ConfigureStore'
 import { Login } from './Reducers/Login';
 import './App.css';
 
-//const store = createStore(Login, applyMiddleware(thunk));
 const store = ConfigureStore();
 
 class App extends Component {

@@ -32,7 +32,7 @@ class Header extends Component {
     handleClick(event) {
         event.preventDefault();
 
-        this.props.login('admin', 'admin')
+        this.props.login('user', 'user')
         .then(result => {
             if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_ADMIN") {
                 this.props.history.push('/admin');
