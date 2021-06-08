@@ -5,6 +5,7 @@ import AdminDashboard from './AdminDashboard';
 import Header from './Header';
 import { connect } from 'react-redux';
 import { login } from '../Actions/Actions';
+import Footer from './Footer';
 
 class Main extends Component {
 
