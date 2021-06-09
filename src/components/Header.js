@@ -10,20 +10,27 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { email: '', password: '' };
+        this.state = { loginUsername: '', loginPassword: '', signUpUsername: '', signUpPassword: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleSignUp = this.handleSignUp.bind(this);
     }
 
     handleChange(event) {
 
-        switch (event.target.type) {
-            case 'email':
-                this.setState({ email: event.target.value });
+        switch (event.target.id) {
+            case 'loginUsername':
+                this.setState({ loginUsername: event.target.value });
                 break;
-            case 'password':
-                this.setState({ password: event.target.value });
+            case 'loginPassword':
+                this.setState({ loginPassword: event.target.value });
+                break;
+            case 'signUpUsername':
+                this.setState({ signUpUsername: event.target.value });
+                break;
+            case 'signUpPassword':
+                this.setState({ signUpPassword: event.target.value });
                 break;
         }
 
@@ -32,18 +39,23 @@ class Header extends Component {
     handleClick(event) {
         event.preventDefault();
 
-        this.props.login('user', 'user')
-        .then(result => {
-            if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_ADMIN") {
-                this.props.history.push('/admin');
-            } else if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_USER") {
-                this.props.history.push('/user');
-            } else {
-                alert("Login Failed - Try different username or password")
-            }
-        });
+        this.props.login(this.state.loginUsername, this.state.loginPassword)
+            .then(result => {
+                if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_ADMIN") {
+                    this.props.history.push('/admin');
+                } else if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_USER") {
+                    this.props.history.push('/user');
+                } else {
+                    console.log(result);
+                    alert("Login Failed" + result.payload);
+                }
+            });
 
-        this.setState({ email: '', password: '' });
+        this.setState({ loginUsername: '', loginPassword: '' });
+    }
+
+    handleSignUp() {
+
     }
 
     render() {
@@ -53,7 +65,14 @@ class Header extends Component {
                     <NavLink className="nav-link" to="/home">
                         <img src="/MeritBankLogoNew.png" height="80rem" alt="" />
                     </NavLink>
-                    <button className="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Login</button>
+                    <div style={{ textAlign: "center" }}>
+                        <div>
+                            <button className="btn btn-outline-primary" style={{width: "7rem", fontSize: "1.4rem"}} data-toggle="modal" data-target="#exampleModal">Login</button>
+                        </div>
+                        <div>
+                            <span className="text-muted" style={{cursor: "pointer"}} data-toggle="modal" data-target="#SignUpModal" onClick={() => this.handleSignUp} >Sign Up</span>
+                        </div>
+                    </div>
                 </nav>
 
 
@@ -61,15 +80,15 @@ class Header extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Login / Sign Up</h5>
+                                <h5 className="modal-title" id="exampleModalLabel">Login</h5>
                             </div>
                             <div className="modal-body">
                                 <div className="form-outline">
-                                    <input type="email" className="form-control" value={this.state.email} onChange={this.handleChange} />
-                                    <label className="form-label" htmlFor="formControlDefault">Email address </label>
+                                    <input type="text" id="loginUsername" className="form-control" value={this.state.loginUsername} onChange={this.handleChange} />
+                                    <label className="form-label" htmlFor="formControlDefault">Username</label>
                                 </div>
                                 <div className="form-outline">
-                                    <input type="password" className="form-control" value={this.state.password} onChange={this.handleChange} />
+                                    <input type="password" id="loginPassword" className="form-control" value={this.state.loginPassword} onChange={this.handleChange} />
                                     <label className="form-label" htmlFor="formControlDefault">Password</label>
                                 </div>
                             </div>
@@ -80,6 +99,31 @@ class Header extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="modal fade" id="SignUpModal" tabIndex="-1" role="dialog" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel">Sign Up</h5>
+                            </div>
+                            <div className="modal-body">
+                                <div className="form-outline">
+                                    <input type="text" id="signUpUsername" className="form-control" value={this.state.signUpUsername} onChange={this.handleChange} />
+                                    <label className="form-label" htmlFor="formControlDefault">Username</label>
+                                </div>
+                                <div className="form-outline">
+                                    <input type="password" id="signUpPassword" className="form-control" value={this.state.signUpPassword} onChange={this.handleChange} />
+                                    <label className="form-label" htmlFor="formControlDefault">Password</label>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleSignUp}>Submit</button>
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         );
     }

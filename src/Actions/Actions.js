@@ -32,15 +32,15 @@ export const login = (username, password) => (dispatch) => {
         .then(Response => Response.json())
         .then(token => dispatch(addAuthResponse(token)))
         .catch(error => dispatch(loginFailed(error.message)));
-        
+
 }
 
-export const addAuthResponse = (token) => ({
+const addAuthResponse = (token) => ({
     type: ActionTypes.LOGIN,
     payload: token
 });
 
-export const loginFailed = (errMess) => ({
+const loginFailed = (errMess) => ({
     type: ActionTypes.LOGIN_FAILED,
     payload: errMess
 });

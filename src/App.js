@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './Reducers/ConfigureStore'
 import { Login } from './Reducers/Login';
-import './App.css';
+// import './App.css';
 
 const store = ConfigureStore();
 

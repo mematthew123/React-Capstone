@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Header from './Header';
+import Home from "./Home/Home"
 import UserDashboard from './UserDashboard';
 import AdminDashboard from './AdminDashboard';
-import Header from './Header';
-import { connect } from 'react-redux';
 import { login } from '../Actions/Actions';
+import ContactForm from './ContactForm';
 import Footer from './Footer';
 
 class Main extends Component {
@@ -16,8 +18,9 @@ class Main extends Component {
                 <Switch location={this.props.location}>
                     <Route path="/user" component={UserDashboard} />
                     <Route path="/admin" component={AdminDashboard} />
-                    <Redirect to="/home" />
+                    <Route path="/home" component={Home} />
                 </Switch>
+                <ContactForm />
             </React.Fragment>
         );
     }
