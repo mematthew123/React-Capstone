@@ -83,7 +83,14 @@ class ContactForm extends React.Component {
 
       return (
         <>
-          <button className="btn btn-outline-primary" style={{ width: "9rem", fontSize: "1.4rem" }} data-toggle="modal" data-target="#contactModal">Contact Us</button>
+
+        <nav className="navbar fixed-bottom navbar-light bg-white">
+        <a className="navbar-brand" href="#"></a>
+        <button type="button" className="btn btn-link"  data-toggle="modal" data-target="#contactModal">Contact Us</button>
+
+      </nav>
+
+
 
           <div className="modal fade" id="contactModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
