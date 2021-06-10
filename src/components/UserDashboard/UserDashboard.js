@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AccountPreview from './AccountPreview';
+import AccountPreview from '../AccountPreview/AccountPreview';
+import './UserDashboard.css';
 
 class UserDashboard extends React.Component {
 
@@ -13,8 +14,7 @@ class UserDashboard extends React.Component {
     }
 
     handleClick() {
-        console.log(this.props.jwt);
-        console.log(this.props.role);
+        console.log(this.props);
     }
 
     handleAdmin() {
@@ -43,7 +43,8 @@ class UserDashboard extends React.Component {
 
 const mapStateToProps = state => ({
     jwt: state.jwt,
-    role: state.role
+    role: state.role,
+    errMess: state.errMess
 });
 
 export default withRouter(connect(mapStateToProps)(UserDashboard));

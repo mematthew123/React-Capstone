@@ -1,6 +1,6 @@
 import * as ActionTypes from '../Actions/Types';
 
-export const Login = (state = {jwt: '', role: '', errMess: ''}, action) => {
+export const Authentication = (state = { jwt: '', role: '', errMess: '' }, action) => {
   switch (action.type) {
     case ActionTypes.LOGIN:
       return { ...state, jwt: action.payload.jwt, role: action.payload.role, errMess: '' };

@@ -1,6 +1,7 @@
-import * as ActionTypes from '../Actions/Types';
+import * as ActionTypes from './Types';
 
 const loginUrl = 'http://localhost:8080/authenticate';
+const signUpUrl = 'http://localhost:8080/authenticate/createUser';
 
 const postRequestConfig = (body) => {
     return {
@@ -14,7 +15,10 @@ const postRequestConfig = (body) => {
 
 export const login = (username, password) => (dispatch) => {
 
-    return fetch(loginUrl, postRequestConfig({ password: password, username: username }))
+    return fetch(loginUrl, postRequestConfig({
+        password: password,
+        username: username
+    }))
         .then(response => {
             if (response.ok) {
                 return response;
@@ -24,11 +28,7 @@ export const login = (username, password) => (dispatch) => {
                 error.response = response;
                 throw error;
             }
-        },
-            error => {
-                var errmess = new Error(error.message);
-                throw errmess;
-            })
+        })
         .then(Response => Response.json())
         .then(token => dispatch(addAuthResponse(token)))
         .catch(error => dispatch(loginFailed(error.message)));
@@ -44,3 +44,14 @@ const loginFailed = (errMess) => ({
     type: ActionTypes.LOGIN_FAILED,
     payload: errMess
 });
+
+export const signUp = (username, password) => {
+
+    return fetch(signUpUrl, postRequestConfig({
+        password: password,
+        username: username,
+        active: true,
+        role: 'ROLE_USER'
+    }))
+
+}

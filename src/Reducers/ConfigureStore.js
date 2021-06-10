@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
-import { Login } from './Login';
+import { Authentication } from './Authentication';
 
 
 export const ConfigureStore = () => {
     const store = createStore(
-        Login,
+        Authentication,
         applyMiddleware(thunk)
     );
 

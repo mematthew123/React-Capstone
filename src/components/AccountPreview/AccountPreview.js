@@ -1,4 +1,5 @@
 import React from 'react';
+import './AccountPreview.css';
 
 function AccountPreview(props) {
 

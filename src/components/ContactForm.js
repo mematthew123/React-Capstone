@@ -93,7 +93,7 @@ class ContactForm extends React.Component {
                 </div>
                 <div className="modal-body">
                   <div className="form-group">
-                    <input type="text" className="form-control" value={this.state.name} onChange={this.handleChange} onBlur={this.handleBlur} />
+                    <input type="text" name="name" className="form-control" value={this.state.name} onChange={this.handleChange} onBlur={this.handleBlur} />
                     <label className="form-label" htmlFor="formControlDefault">Name</label>
                   </div>
                   <div className="form-group">
