@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { login } from '../../Actions/Authentication';
-import { fetchAccount } from '../../Actions/UserAccount';
+import { fetchAccount } from '../../Actions/Account';
 import * as ActionTypes from '../../Actions/Types';
 
 
