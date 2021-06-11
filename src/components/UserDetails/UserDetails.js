@@ -6,7 +6,7 @@ class UserDetails extends React.Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
-        this.handleAdmin = this.handleAdmin.bind(this);
+        // this.handleAdmin = this.handleAdmin.bind(this);
     }
 
     handleClick(event) {
@@ -118,7 +118,7 @@ class UserDetails extends React.Component {
     }
 
 
-}
+} export default UserDetails;
 
 
 

@@ -33,6 +33,14 @@ function Home() {
             <div className="content flex">
                 <p>Merit America Team 6 | 2021 | Capstone</p>
             </div>
+
+            <div className="row" style={{ padding: "1.5rem"}}>
+                <div className="col card"></div>
+                <div className="col card"></div>
+                <div className="col card"></div>
+                <div className="col card"></div>
+            </div>
+
         </>
     );
 }

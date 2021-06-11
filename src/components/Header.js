@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import SignUpModal from './SignUpModal/SignUpModal';
 import LoginModal from './LoginModal/LoginModal';
 
-
 class Header extends Component {
 
     render() {

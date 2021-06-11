@@ -6,7 +6,7 @@ function AccountPreview(props) {
     // React.useEffect(() => { console.log(props); }, []);
 
     return (
-        <div className="card">
+        <div className="userCard">
             <div className="card-title" style={{margin: "0rem"}}>
                 <h3>Account</h3>
             </div>

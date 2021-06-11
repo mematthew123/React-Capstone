@@ -18,7 +18,13 @@
     --neon-border-color:#F50057;
 }
 
-#welcomMessege{
+#welcomeMessege {
+    font-size: 10rem;
+    font-family: 'Brush Script MT', cursive;
+    color: white;
+}
+
+/* #welcomeMessege{
     font-size: 5rem;
     font-weight: 200;
     font-style: italic;
@@ -29,7 +35,7 @@
     margin: 1.3rem;
     border-radius: 2rem;
     text-transform: uppercase;    
-    /* animation: flicker 2.5s infinite alternate;   */
+    animation: flicker 2.5s infinite alternate;
 
     text-shadow:
             -0.2rem -0.2rem 1rem #fff,
@@ -48,10 +54,10 @@
         0 0 4rem var(--neon-border-color),
         inset 0 0 3rem var(--neon-border-color);
 
-}
+} */
 
 /* Animate neon flicker */
-@keyframes flicker {
+/* @keyframes flicker {
     
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     
@@ -77,4 +83,4 @@
         text-shadow: none;
         box-shadow: none;
     }    
-}
+} */

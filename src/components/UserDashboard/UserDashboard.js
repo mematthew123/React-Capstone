@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AccountPreview from '../AccountPreview/AccountPreview';
+import UserDetails from '../UserDetails/UserDetails';
 import './UserDashboard.css';
 
 class UserDashboard extends React.Component {
@@ -25,8 +26,7 @@ class UserDashboard extends React.Component {
         if (this.props.account.account == null) {
             return (
                 <>
-                    <h1>No User Infor</h1>
-                    <button className="btn btn-light" onClick={this.handleClick} >Print Props</button>
+                    <UserDetails />
                 </>
             );
         } else {
@@ -39,9 +39,9 @@ class UserDashboard extends React.Component {
                             <AccountPreview />
                         </div>
                         <div className="col-9" id="userDisplayDiv">
-                            <h1 id="welcomMessege">Welcome To Merit</h1>
-                            <button className="btn btn-light" onClick={this.handleClick} >Print Props</button>
-                            <button className="btn btn-light" onClick={this.handleAdmin} >Go To Admin</button>
+                            <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
+                            <button className="btn btn-light" onClick={this.handleClick}>Print Props</button>
+                            <button className="btn btn-light" onClick={this.handleAdmin}>Go To Admin</button>
                         </div>
                     </div>
                 </div>

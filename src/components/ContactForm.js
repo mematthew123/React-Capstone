@@ -82,15 +82,12 @@ class ContactForm extends React.Component {
     if (!formValid) {
 
       return (
-        <>
+        <div>
 
-          <nav className="navbar fixed-bottom navbar-light bg-white">
+          <nav className="navbar navbar-light bg-white fixed-bottom" style={{ height: "4rem" }}>
             <a className="navbar-brand" href="#"></a>
             <button type="button" className="btn btn-link" data-toggle="modal" data-target="#contactModal">Contact Us</button>
-
           </nav>
-
-
 
           <div className="modal fade" id="contactModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
@@ -173,7 +170,7 @@ class ContactForm extends React.Component {
           <hr /> */}
 
 
-        </>
+        </div>
       );
     } else {
       return (
@@ -190,12 +187,6 @@ class ContactForm extends React.Component {
     }
   }
 }
-
-
-
-
-
-
 
 
 export default ContactForm;
