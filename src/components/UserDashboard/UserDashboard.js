@@ -22,29 +22,37 @@ class UserDashboard extends React.Component {
     }
 
     render() {
-        return (
-            <div className="container-fluid">
-                <div className="row" id="userDashboardDiv">
-                    <div className="col-3" id="accountDisplayDiv">
-                        <AccountPreview />
-                        <AccountPreview />
-                        <AccountPreview />
-                    </div>
-                    <div className="col-9" id="userDisplayDiv">
-                        <h1 id="welcomMessege">Welcome To Merit</h1>
-                        <button className="btn btn-light" onClick={this.handleClick} >Print Props</button>
-                        <button className="btn btn-light" onClick={this.handleAdmin} >Go To Admin</button>
+        if (this.props.account.account == null) {
+            return (
+                <>
+                    <h1>No User Infor</h1>
+                    <button className="btn btn-light" onClick={this.handleClick} >Print Props</button>
+                </>
+            );
+        } else {
+            return (
+                <div className="container-fluid">
+                    <div className="row" id="userDashboardDiv">
+                        <div className="col-3" id="accountDisplayDiv">
+                            <AccountPreview />
+                            <AccountPreview />
+                            <AccountPreview />
+                        </div>
+                        <div className="col-9" id="userDisplayDiv">
+                            <h1 id="welcomMessege">Welcome To Merit</h1>
+                            <button className="btn btn-light" onClick={this.handleClick} >Print Props</button>
+                            <button className="btn btn-light" onClick={this.handleAdmin} >Go To Admin</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
 const mapStateToProps = state => ({
-    jwt: state.jwt,
-    role: state.role,
-    errMess: state.errMess
+    account: state.account,
+    authenticate: state.authenticate
 });
 
 export default withRouter(connect(mapStateToProps)(UserDashboard));

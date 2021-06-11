@@ -33,8 +33,8 @@ class AdminDashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    jwt: state.jwt,
-    role: state.role
+    jwt: state.authenticate.jwt,
+    role: state.authenticate.role
 });
 
 export default withRouter(connect(mapStateToProps)(AdminDashboard));

@@ -84,11 +84,11 @@ class ContactForm extends React.Component {
       return (
         <>
 
-        <nav className="navbar fixed-bottom navbar-light bg-white">
-        <a className="navbar-brand" href="#"></a>
-        <button type="button" className="btn btn-link"  data-toggle="modal" data-target="#contactModal">Contact Us</button>
+          <nav className="navbar fixed-bottom navbar-light bg-white">
+            <a className="navbar-brand" href="#"></a>
+            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#contactModal">Contact Us</button>
 
-      </nav>
+          </nav>
 
 
 

@@ -1,7 +1,5 @@
 import * as ActionTypes from './Types';
-
-const loginUrl = 'http://localhost:8080/authenticate';
-const signUpUrl = 'http://localhost:8080/authenticate/createUser';
+import * as URLs from './Urls';
 
 const postRequestConfig = (body) => {
     return {
@@ -15,9 +13,9 @@ const postRequestConfig = (body) => {
 
 export const login = (username, password) => (dispatch) => {
 
-    return fetch(loginUrl, postRequestConfig({
-        password: password,
-        username: username
+    return fetch(URLs.login, postRequestConfig({
+        username: username,
+        password: password
     }))
         .then(response => {
             if (response.ok) {
@@ -47,7 +45,7 @@ const loginFailed = (errMess) => ({
 
 export const signUp = (username, password) => {
 
-    return fetch(signUpUrl, postRequestConfig({
+    return fetch(URLs.signUp, postRequestConfig({
         password: password,
         username: username,
         active: true,
