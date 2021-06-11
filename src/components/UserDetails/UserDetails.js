@@ -68,6 +68,31 @@ class UserDetails extends React.Component {
                         <input type="password" className="form-control" placeholder="Enter password" />
                     </div>
 
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                        <label class="custom-control-label" for="customCheck1">Open Checking Account</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" />
+                        <label class="custom-control-label" for="customCheck1">Open Savings Account</label>
+                    </div>
+
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3" />
+                        <label class="custom-control-label" for="customCheck1">Open CD account</label>
+                    </div>
+
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck4" />
+                        <label class="custom-control-label" for="customCheck1">Open IRA Account</label>
+                    </div>
+
+
+
+
                     <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.handleSubmit} >Register </button>
 
 
