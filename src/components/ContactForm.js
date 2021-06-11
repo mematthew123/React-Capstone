@@ -121,7 +121,7 @@ class ContactForm extends React.Component {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleSubmit}>Login</button>
+                  <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleSubmit}>Submit</button>
                   <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 </div>
               </div>
