@@ -21,6 +21,7 @@ class Main extends Component {
                     <Route exact path="/" component={Home} />
                 </Switch>
                 <ContactForm />
+                <Footer/>
             </React.Fragment>
         );
     }
