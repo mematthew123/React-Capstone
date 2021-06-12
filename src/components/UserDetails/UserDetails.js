@@ -27,6 +27,10 @@ class UserDetails extends React.Component {
         // add fetch post to add account holder
     }
 
+
+
+  
+
     render() {
         return (
 
@@ -96,7 +100,7 @@ class UserDetails extends React.Component {
                         <label className="custom-control-label" htmlFor="customCheck4">Open IRA Account</label>
                     </div>
 
-                    <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+                    <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.handleSignUp}>Submit</button>
 
                     <p className="forgot-password text-right">
                         Already registered <a href="#">log in?</a>
