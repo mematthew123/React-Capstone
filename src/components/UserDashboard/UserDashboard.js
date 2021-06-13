@@ -48,11 +48,21 @@ class UserDashboard extends React.Component {
                             <button className="btn btn-light" onClick={this.handleAdmin}>Go To Admin</button>
                         </div>
                     </div>
-                </div>
-            );
+                    </div>
+            
+            
+            
+            
+            
+            
+            
+                    );
         }
     }
 }
+
+
+
 
 const mapStateToProps = state => ({
     account: state.account,

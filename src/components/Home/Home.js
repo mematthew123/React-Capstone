@@ -28,6 +28,7 @@ function Home() {
                 <div>Capstone</div>
                 <div>Team 6 | 2021</div>
             </div>
+           
 
             <div align="center">
                 <hr style={{ borderTop: '2px solid black', width: '90%' }} />
