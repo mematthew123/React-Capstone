@@ -23,11 +23,15 @@ class UserDashboard extends React.Component {
     }
 
     render() {
-        if (this.props.account.account == null) {
+        if (this.props.account.account == null && this.props.authenticate.jwt == '') {
             return (
-                <>
-                    <UserDetails />
-                </>
+                <div className="d-flex align-items-center justify-content-center" style={{ height: '90vh' }}>
+                    <h1>You must be logged in to reach this page.</h1>
+                </div>
+            );
+        } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
+            return (
+                <UserDetails />
             );
         } else {
             return (

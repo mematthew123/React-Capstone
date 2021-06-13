@@ -6,17 +6,11 @@ function Home() {
         <>
             <div className="header">
                 <div className="inner-header flex">
-                    <svg version="1.1" className="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xmlSpace="preserve">
-                        <path fill="#FFFFFF" stroke="#000000" strokeWidth="10" strokeMiterlimit="10" d="M57,283" />
-                        <g>
-                            <path fill="#fff" d="M250.4,0.8C112.7,0.8,1,112.4,1,250.2c0,137.7,111.7,249.4,249.4,249.4c137.7,0,249.4-111.7,249.4-249.4C499.8,112.4,388.1,0.8,250.4,0.8z M383.8,326.3c-62,0-101.4-14.1-117.6-46.3c-17.1-34.1-2.3-75.4,13.2-104.1c-22.4,3-38.4,9.2-47.8,18.3c-11.2,10.9-13.6,26.7-16.3,45c-3.1,20.8-6.6,44.4-25.3,62.4c-19.8,19.1-51.6,26.9-100.2,24.6l1.8-39.7c35.9,1.6,59.7-2.9,70.8-13.6c8.9-8.6,11.1-22.9,13.5-39.6c6.3-42,14.8-99.4,141.4-99.4h41L333,166c-12.6,16-45.4,68.2-31.2,96.2c9.2,18.3,41.5,25.6,91.2,24.2l1.1,39.8C390.5,326.2,387.1,326.3,383.8,326.3z" />
-                        </g>
-                    </svg>
                     <h1>Welcome to Merit Bank</h1>
                 </div>
 
                 <div>
-                    <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+                    <svg className="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
                         <defs>
                             <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                         </defs>
@@ -30,17 +24,59 @@ function Home() {
                 </div>
             </div>
 
-            <div className="content flex">
-                <p>Merit America Team 6 | 2021 | Capstone</p>
+            <div align="center">
+                <div>Capstone</div>
+                <div>Team 6 | 2021</div>
             </div>
 
-            <div className="row" style={{ padding: "1.5rem"}}>
-                <div className="col card"></div>
-                <div className="col card"></div>
-                <div className="col card"></div>
-                <div className="col card"></div>
+            <div align="center">
+                <hr style={{ borderTop: '2px solid black', width: '90%' }} />
             </div>
 
+
+            <div className="container">
+                <div className="card-deck">
+                    <div className="card">
+                        <img className="card-img-top" src="https://api.time.com/wp-content/uploads/2016/04/how-your-checking-account-affects-your-mood.jpg" alt="checking account" />
+                        <div className="card-body">
+                            <h5 className="card-title">Checking Account</h5>
+                            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img className="card-img-top" src="https://cdn.gobankingrates.com/wp-content/uploads/2019/09/illustration-businessman-sitting-on-piggy-bank-using-laptop-iStock-1136812263-Edit.jpg" alt="Card image cap" />
+                        <div className="card-body">
+                            <h5 className="card-title">Savings Account</h5>
+                            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card-deck">
+                    <div className="card">
+                        <img className="card-img-top" src="https://www.creditloan.com/media/resize/700x394/choosing-a-certificate-of-deposit-cd-vs-a-savings-account-0.png" alt="checking account" />
+                        <div className="card-body">
+                            <h5 className="card-title">Certificate of Deposit</h5>
+                            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img className="card-img-top" src="https://www.moneycrashers.com/wp-content/uploads/2020/09/ira-individual-retirement-account-block-letters-1068x713.jpg" alt="Card image cap" />
+                        <div className="card-body">
+                            <h5 className="card-title">Individual Retirement Account</h5>
+                            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div align="center">
+                <hr style={{ borderTop: '2px solid black', width: '90%' }} />
+            </div>
         </>
     );
 }

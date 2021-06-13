@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       name: '',
       nameError: false,
@@ -84,10 +85,7 @@ class ContactForm extends React.Component {
       return (
         <div>
 
-          <nav className="navbar navbar-light bg-white fixed-bottom" style={{ height: "4rem" }}>
-            <a className="navbar-brand" href="#"></a>
-            <button type="button" className="btn btn-link" data-toggle="modal" data-target="#contactModal">Contact Us</button>
-          </nav>
+          <button type="button" className="btn btn-link" data-toggle="modal" data-target="#contactModal" style={{ color: 'white' }}>Contact Us</button>
 
           <div className="modal fade" id="contactModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
