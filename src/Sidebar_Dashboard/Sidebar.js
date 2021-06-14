@@ -27,14 +27,7 @@ const NavIcon = styled(Link)`
 const SidebarNav = styled.nav`
   background: #1e90ff;
   width: 250px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
-  transition: 350ms;
-  z-index: 10;
+  height: 80vh;
 `;
 
 const SidebarWrap = styled.div`
@@ -48,23 +41,22 @@ const Sidebar = () => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      {/* <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-        </Nav>
-        <SidebarNav sidebar={sidebar}>
+        </Nav>*/}
+        <SidebarNav sidebar={sidebar}> 
+        
           <SidebarWrap>
-            <NavIcon to='#'>
+            {/* <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
-            {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
+            </NavIcon> */}
+            {SidebarData.map((item, index) => { return <SubMenu item={item} key={index} />; })}
           </SidebarWrap>
         </SidebarNav>
-      </IconContext.Provider>
+     {/*  </IconContext.Provider> */}
     </>
   );
 };

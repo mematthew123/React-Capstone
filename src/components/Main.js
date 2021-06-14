@@ -8,6 +8,9 @@ import AdminDashboard from './AdminDashboard';
 import { login } from '../Actions/Authentication';
 import ContactForm from './ContactForm/ContactForm';
 import Footer from './Footer/Footer';
+import Sidebar from '../Sidebar_Dashboard/Sidebar';
+import { SidebarData } from '../Sidebar_Dashboard/SidebarData';
+import SubMenu from '../Sidebar_Dashboard/SubMenu';
 
 class Main extends Component {
 
@@ -15,12 +18,12 @@ class Main extends Component {
         return (
             <>
                 <Header />
-                    <Switch location={this.props.location}>
-                        <Route path="/user" component={UserDashboard} />
-                        <Route path="/admin" component={AdminDashboard} />
-                        <Route exact path="/" component={Home} />
-                       
-                    </Switch>
+                <Switch location={this.props.location}>
+                    <Route path="/user" component={UserDashboard} />
+                    <Route path="/admin" component={AdminDashboard} />
+                    <Route path="/sidebar" component={Sidebar} />
+                    <Route exact path="/" component={Home} />
+                </Switch>
                 <Footer />
             </>
         );
