@@ -1,6 +1,16 @@
-.userCard {
-    background-color: #fff;
-    padding: 1rem;
+.card-title {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.card-body {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.card {
     margin: 1rem;
-    height: 12rem;
+    padding: 0rem;
 }

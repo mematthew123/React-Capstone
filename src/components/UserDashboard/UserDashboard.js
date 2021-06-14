@@ -23,6 +23,7 @@ class UserDashboard extends React.Component {
     }
 
     render() {
+
         if (this.props.account.account == null && this.props.authenticate.jwt == '') {
             return (
                 <div className="d-flex align-items-center justify-content-center" style={{ height: '90vh' }}>
@@ -48,15 +49,8 @@ class UserDashboard extends React.Component {
                             <button className="btn btn-light" onClick={this.handleAdmin}>Go To Admin</button>
                         </div>
                     </div>
-                    </div>
-            
-            
-            
-            
-            
-            
-            
-                    );
+                </div>
+            );
         }
     }
 }
