@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postChecking } from '../../Actions/Checking';
 import { DropdownButton, Dropdown } from "react-bootstrap";
+import { postSavings } from "../../Actions/Savings";
 
 class AddAccountModal extends Component {
 
@@ -26,6 +27,10 @@ class AddAccountModal extends Component {
 
         if(this.state.accountType == 'Checking') {
             this.props.addCheckingAccount(this.props.authenticate.jwt, {
+                balance: this.state.startingBalance
+            });
+        } else if (this.state.accountType == 'Savings') {
+            this.props.addSavingsAccount(this.props.authenticate.jwt, {
                 balance: this.state.startingBalance
             });
         }
@@ -74,7 +79,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addCheckingAccount: (token, data) => dispatch(postChecking(token, data))
+    addCheckingAccount: (token, data) => dispatch(postChecking(token, data)),
+    addSavingsAccount: (token, data) => dispatch(postSavings(token, data))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddAccountModal));

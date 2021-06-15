@@ -41,28 +41,40 @@ class UserDashboard extends React.Component {
                     <div className="row" id="userDashboardDiv">
 
                         <div className="col-3" id="accountDisplayDiv">
-                            <AccountPreview accounts={this.props.account.account.checkingAccounts} />
+                            <div>
+                                <label>Checking Accounts</label>
+                                <AccountPreview accounts={this.props.account.account.checkingAccounts} />
+                            </div>
+
+                            <div>
+                                <label>Savings Accounts</label>
+                                <AccountPreview accounts={this.props.account.account.savingsAccounts} />
+                            </div>
+
                             <div style={{ position: 'absolute', bottom: '0' }}>
                                 <AddAccountModal />
                             </div>
                         </div>
+
+
                         <div className="col-9" id="userDisplayDiv">
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
                             <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
                             <div>
 
-                                <h3 id="Assist" >How may we asisst you?</h3>
+                                <h3>How may we asisst you?</h3>
                                 <div className="input-group" id="dropselect">
                                     <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                         <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="1">Deposit to Account</option>
+                                        <option value="2">Widthdraw from Account</option>
+                                        <option value="3">Transfer between Accounts</option>
                                     </select>
                                     <button className="btn btn-outline-secondary" type="button">Button</button>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
