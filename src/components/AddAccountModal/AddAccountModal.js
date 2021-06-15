@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postChecking } from '../../Actions/Checking';
-import { fetchAccount } from '../../Actions/Account';
-import * as ActionTypes from '../../Actions/Types';
 import { DropdownButton, Dropdown } from "react-bootstrap";
 
 class AddAccountModal extends Component {
