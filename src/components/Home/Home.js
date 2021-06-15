@@ -24,10 +24,7 @@ function Home() {
                 </div>
             </div>
 
-            <div align="center">
-                <div>Capstone</div>
-                <div>Team 6 | 2021</div>
-            </div>
+           
            
 
             <div align="center">

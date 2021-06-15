@@ -50,6 +50,7 @@ class UserDashboard extends React.Component {
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
                             <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
                             <div>
+<<<<<<< HEAD
 
                                 <h3 id="Assist" >How may we asisst you?</h3>
                                 <div className="input-group" id="dropselect">
@@ -61,6 +62,18 @@ class UserDashboard extends React.Component {
                                     </select>
                                     <button className="btn btn-outline-secondary" type="button">Button</button>
                                 </div>
+=======
+                
+                            <h3 id= "Assist" >How may we asisst you?</h3>
+                            <div className="input-group" id="dropselect">
+                            <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option selected>I want too...</option>
+                            <option value="1">Make a Transfer</option>
+                            <option value="2">View Checking Account</option>
+                            <option value="3">View Savings Account</option>
+                            </select>
+                            <button class="btn btn-outline-secondary" type="button">Button</button>
+>>>>>>> 47e492cf1730c1f8df15158beab5898230734b1c
                             </div>
                         </div>
                     </div>
