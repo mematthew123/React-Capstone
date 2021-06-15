@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { postChecking } from '../../Actions/Checking';
 import AccountPreview from '../AccountPreview/AccountPreview';
 import UserDetails from '../UserDetails/UserDetails';
 import './UserDashboard.css';
@@ -10,16 +11,19 @@ class UserDashboard extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
-        this.handleAdmin = this.handleAdmin.bind(this);
+        this.handlePrintProps = this.handlePrintProps.bind(this);
+        this.handleAddCheckingAccount = this.handleAddCheckingAccount.bind(this);
     }
 
-    handleClick() {
+    handlePrintProps() {
         console.log(this.props);
     }
 
-    handleAdmin() {
-        this.props.history.push('/admin');
+    handleAddCheckingAccount() {
+
+        this.props.addCheckingAccount(this.props.authenticate.jwt, {
+            balance: 1000
+        });
     }
 
     render() {
@@ -34,23 +38,24 @@ class UserDashboard extends React.Component {
             return (
                 <UserDetails />
             );
-        } else {
+        } else if (this.props.account.account != null && this.props.authenticate.jwt != '') {
+
             return (
                 <div className="container-fluid">
                     <div className="row" id="userDashboardDiv">
                         <div className="col-3" id="accountDisplayDiv">
-                            <AccountPreview />
-                            <AccountPreview />
-                            <AccountPreview />
+                            <AccountPreview accounts={this.props.account.account.checkingAccounts} />
                         </div>
                         <div className="col-9" id="userDisplayDiv">
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
-                            <button className="btn btn-light" onClick={this.handleClick}>Print Props</button>
-                            <button className="btn btn-light" onClick={this.handleAdmin}>Go To Admin</button>
+                            <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
+                            <button className="btn btn-light" onClick={this.handleAddCheckingAccount}>Add Checking Account</button>
                         </div>
                     </div>
                 </div>
             );
+        } else {
+            return (<div></div>);
         }
     }
 }
@@ -63,4 +68,8 @@ const mapStateToProps = state => ({
     authenticate: state.authenticate
 });
 
-export default withRouter(connect(mapStateToProps)(UserDashboard));
+const mapDispatchToProps = dispatch => ({
+    addCheckingAccount: (token, data) => dispatch(postChecking(token, data))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserDashboard));

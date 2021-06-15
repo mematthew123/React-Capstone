@@ -73,22 +73,25 @@ function Balance({ balance }) {
     }
 }
 
-function AccountPreview(props) {
+function AccountPreview({accounts}) {
 
     // React.useEffect(() => { console.log(props); }, []);
 
+    console.log(accounts);
+
     return (
-        <div className="card">
-            <Balance balance={props.balance} />
+        <div></div>
+        // <div className="card">
+        //     <Balance balance={props.balance} />
 
-            <div align="center"><hr style={{ borderTop: '1px solid black', width: '95%', margin: '0' }} /></div>
+        //     <div align="center"><hr style={{ borderTop: '1px solid black', width: '95%', margin: '0' }} /></div>
 
-            <div className="card-body">
-                <InterestRate interestRate={props.interestRate} />
-                <OpenedOn date={props.date} />
-                <Term term={props.term} />
-            </div>
-        </div>
+        //     <div className="card-body">
+        //         <InterestRate interestRate={props.interestRate} />
+        //         <OpenedOn date={props.date} />
+        //         <Term term={props.term} />
+        //     </div>
+        // </div>
     );
 }
 
