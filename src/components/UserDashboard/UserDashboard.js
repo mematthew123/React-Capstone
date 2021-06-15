@@ -6,6 +6,8 @@ import AccountPreview from '../AccountPreview/AccountPreview';
 import UserDetails from '../UserDetails/UserDetails';
 import './UserDashboard.css';
 
+
+
 class UserDashboard extends React.Component {
 
     constructor(props) {
@@ -41,8 +43,19 @@ class UserDashboard extends React.Component {
         } else if (this.props.account.account != null && this.props.authenticate.jwt != '') {
 
             return (
+
+
+            
+                
+                                
+                
+                                  
+
+
+
                 <div className="container-fluid">
                     <div className="row" id="userDashboardDiv">
+
                         <div className="col-3" id="accountDisplayDiv">
                             <AccountPreview accounts={this.props.account.account.checkingAccounts} />
                         </div>
@@ -50,7 +63,20 @@ class UserDashboard extends React.Component {
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
                             <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
                             <button className="btn btn-light" onClick={this.handleAddCheckingAccount}>Add Checking Account</button>
+                            <div>
+                
+                            <h3 id= "Assist" >How may we asisst you?</h3>
+                            <div className="input-group" id="dropselect">
+                            <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                            <button class="btn btn-outline-secondary" type="button">Button</button>
+                            </div>
                         </div>
+                    </div>
                     </div>
 
                     {/* <form className="form-inline">
@@ -71,7 +97,7 @@ class UserDashboard extends React.Component {
 
                   </div>
 
-            );
+                  );
         } else {
             return (<div></div>);
         }
