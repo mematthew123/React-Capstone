@@ -1,5 +1,7 @@
 import React from 'react';
 import './AccountPreview.css';
+import NumberFormat from 'react-number-format';
+import Moment from 'moment';
 
 function Term({ term }) {
 
@@ -30,7 +32,10 @@ function InterestRate({ interestRate }) {
                     <p>Interest Rate</p>
                 </div>
                 <div className="ml-auto">
-                    <p>{interestRate}</p>
+                    <p><NumberFormat 
+                    value={interestRate * 100}
+                    prefix='% '
+                    displayType='text' /></p>
                 </div>
             </div >
         );
@@ -38,6 +43,8 @@ function InterestRate({ interestRate }) {
 }
 
 function OpenedOn({ date }) {
+
+    Moment.locale('en');
 
     if (date == null) {
         return (<></>);
@@ -48,7 +55,7 @@ function OpenedOn({ date }) {
                     <p>Opened on</p>
                 </div>
                 <div className="ml-auto">
-                    <p>{date}</p>
+                    <p>{Moment(date).format('D MMM YYYY')}</p>
                 </div>
             </div >
         );
@@ -66,32 +73,33 @@ function Balance({ balance }) {
                     <h2>Balance</h2>
                 </div>
                 <div className="ml-auto">
-                    <h2>{balance}</h2>
+                    <h2>${balance}</h2>
                 </div>
             </div >
         );
     }
 }
 
-function AccountPreview({accounts}) {
+function AccountPreview({ accounts }) {
 
-    // React.useEffect(() => { console.log(props); }, []);
+    const renderAccountPreview = accounts.map((accounts) => {
+        return (
+            <div className="card">
+                <Balance balance={accounts.balance} />
 
-    console.log(accounts);
+                <div align="center"><hr style={{ borderTop: '1px solid black', width: '95%', margin: '0' }} /></div>
+
+                <div className="card-body">
+                    <InterestRate interestRate={accounts.interestRate} />
+                    <OpenedOn date={accounts.openedDate} />
+                    <Term term={accounts.term} />
+                </div>
+            </div>
+        );
+    })
 
     return (
-        <div></div>
-        // <div className="card">
-        //     <Balance balance={props.balance} />
-
-        //     <div align="center"><hr style={{ borderTop: '1px solid black', width: '95%', margin: '0' }} /></div>
-
-        //     <div className="card-body">
-        //         <InterestRate interestRate={props.interestRate} />
-        //         <OpenedOn date={props.date} />
-        //         <Term term={props.term} />
-        //     </div>
-        // </div>
+        <>{renderAccountPreview}</>
     );
 }
 

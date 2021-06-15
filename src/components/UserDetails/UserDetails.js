@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postAccount } from '../../Actions/Account';
+import './UserDetails.css';
 
 
 class UserDetails extends React.Component {
@@ -22,102 +23,57 @@ class UserDetails extends React.Component {
             email: values.target.email.value,
             phone: values.target.phone.value
         });
-
-        // create handle click 
-        // add fetch post to add account holder
     }
-
-
-
-  
 
     render() {
         return (
 
-
-            <div>
-                <span className="form-group" data-toggle="modal" data-target="#UserDetails" data-backdrop="static"></span>
-
-                <h3>Register</h3>
-
-                <form onSubmit={this.handleSubmit}>
-
-                    <div className="form-group">
-                        <label>First Name</label>
-                        <input type="text" className="form-control" placeholder="First name" id="firstName" />
+            <div className="d-flex register">
+                <div className="col-md-5">
+                    <div className="register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                        <h3>Welcome</h3>
+                        <p>Please fill out the form to take control of your finances today!</p>
                     </div>
+                </div>
 
-                    <div className="form-group">
-                        <label>Middle Name</label>
-                        <input type="text" className="form-control" placeholder="Middle name" id="middleName" />
-                    </div>
+                <div className="col-md-7">
+                    <h3 className="register-heading">Registration</h3>
 
-                    <div className="form-group">
-                        <label>Last Name</label>
-                        <input type="text" className="form-control" placeholder="Last name" id="lastName" />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Social Security</label>
-                        <input type="text" className="form-control" placeholder="Social Security" id="ssn" />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Phone Number</label>
-                        <input type="text" className="form-control" placeholder="Phone Number" id="phone" />
-                    </div>
-
-
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Enter email" id="email" />
-                    </div>
-
-                    {/* <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" />
-                    </div> */}
-
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Open Checking Account</label>
-                    </div>
-
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck2" />
-                        <label className="custom-control-label" htmlFor="customCheck2">Open Savings Account</label>
-                    </div>
-
-
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck3" />
-                        <label className="custom-control-label" htmlFor="customCheck3">Open CD account</label>
-                    </div>
-
-
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck4" />
-                        <label className="custom-control-label" htmlFor="customCheck4">Open IRA Account</label>
-                    </div>
-
-                    <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.handleSignUp}>Submit</button>
-
-                    <p className="forgot-password text-right">
-                        Already registered <a href="#">log in?</a>
-                    </p>
-
-                </form>
-
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="row register-form">
+                            <div className="col">
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="First Name *" id="firstName" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Middle Name *" id="middleName" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Last Name *" id="lastName" />
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="form-group">
+                                    <input type="" className="form-control" placeholder="Social Security Number *" pattern="\d{3}-?\d{2}-?\d{4}" id="ssn" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="email" className="form-control" placeholder="Your Email *" id="email" />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" minLength="10" maxLength="10" name="phone" className="form-control" placeholder="Your Phone *" id="phone" />
+                                </div>
+                                <input type="submit" className="btn btn-primary btnRegister" value="Register" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         );
-
     }
-
-} 
+}
 
 const mapStateToProps = state => ({
-    account: state.account,
     authenticate: state.authenticate
 });
 
@@ -126,7 +82,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserDetails));
-
-
-
-
