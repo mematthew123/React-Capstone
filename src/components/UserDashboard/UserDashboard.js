@@ -52,7 +52,25 @@ class UserDashboard extends React.Component {
                             <button className="btn btn-light" onClick={this.handleAddCheckingAccount}>Add Checking Account</button>
                         </div>
                     </div>
-                </div>
+
+                    <form className="form-inline">
+                    <label className="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+                    <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  
+                    <div className="custom-control custom-checkbox my-1 mr-sm-2"/>
+                      <input type="checkbox" class="custom-control-input" id="customControlInline"/>
+                      <label className="custom-control-label" for="customControlInline">Remember my preference</label>
+                  
+                    <button type="submit" class="btn btn-primary my-1">Submit</button>
+                  </form>
+
+                  </div>
+
             );
         } else {
             return (<div></div>);
