@@ -55,6 +55,8 @@ const Sidebar = () => {
             </NavIcon> */}
             {SidebarData.map((item, index) => { return <SubMenu item={item} key={index} />; })}
           </SidebarWrap>
+          <button type="button" class="btn btn-primary">Create New Account</button>
+
         </SidebarNav>
      {/*  </IconContext.Provider> */}
     </>

@@ -41,6 +41,7 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
+
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -61,8 +62,12 @@ const Sidebar = () => {
             </NavIcon>
             {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
+              <button type="button" class="btn btn-primary">Primary</button>
+
             })}
+
           </SidebarWrap>
+
         </SidebarNav>
       </IconContext.Provider>
     </>
