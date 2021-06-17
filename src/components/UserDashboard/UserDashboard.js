@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { postChecking } from '../../Actions/Checking';
 import AccountPreview from '../AccountPreview/AccountPreview';
 import AddAccountModal from '../AddAccountModal/AddAccountModal';
 import UserDetails from '../UserDetails/UserDetails';
+import SideBar from '../SideBar/SideBar';
 import './UserDashboard.css';
 
 
@@ -29,18 +29,19 @@ class UserDashboard extends React.Component {
                     <h1>You must be logged in to reach this page.</h1>
                 </div>
             );
-        } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
-            return (
-                <UserDetails />
-            );
         } else if (this.props.account.account != null && this.props.authenticate.jwt != '') {
 
             return (
 
-                <div className="container-fluid">
+                <div className="container-flex">
                     <div className="row" id="userDashboardDiv">
 
-                        <div className="col-3" id="accountDisplayDiv">
+                        <div className="col-2">
+                            <SideBar />
+                        </div>
+
+
+                        {/* <div className="col-3" id="accountDisplayDiv">
                             <div>
                                 <label>Checking Accounts</label>
                                 <AccountPreview accounts={this.props.account.account.checkingAccounts} />
@@ -54,10 +55,10 @@ class UserDashboard extends React.Component {
                             <div style={{ position: 'absolute', bottom: '0' }}>
                                 <AddAccountModal />
                             </div>
-                        </div>
+                        </div> */}
 
 
-                        <div className="col-9" id="userDisplayDiv">
+                        <div className="col-10" id="userDisplayDiv">
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
                             <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
                             <div>
@@ -79,6 +80,10 @@ class UserDashboard extends React.Component {
 
                 </div>
 
+            );
+        } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
+            return (
+                <UserDetails />
             );
         } else {
             return (<div></div>);

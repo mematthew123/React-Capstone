@@ -11,6 +11,7 @@ import Footer from './Footer/Footer';
 import Sidebar from '../Sidebar_Dashboard/Sidebar';
 import { SidebarData } from '../Sidebar_Dashboard/SidebarData';
 import SubMenu from '../Sidebar_Dashboard/SubMenu';
+import SideBar from './SideBar/SideBar';
 
 class Main extends Component {
 
@@ -21,7 +22,7 @@ class Main extends Component {
                 <Switch location={this.props.location}>
                     <Route path="/user" component={UserDashboard} />
                     <Route path="/admin" component={AdminDashboard} />
-                    <Route path="/sidebar" component={Sidebar} />
+                    <Route path="/sidebar" component={SideBar} />
                     <Route exact path="/" component={Home} />
                 </Switch>
                 <Footer />

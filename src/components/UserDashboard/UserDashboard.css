@@ -6,11 +6,6 @@
     height: 100vh;
 }
 
-#accountDisplayDiv {
-    background-color: lightslategray;
-    padding: 0;
-}
-
 #userDisplayDiv {
     background-color: black;
 
