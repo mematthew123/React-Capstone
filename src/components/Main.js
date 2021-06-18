@@ -7,6 +7,7 @@ import UserDashboard from './UserDashboard/UserDashboard';
 import AdminDashboard from './AdminDashboard';
 import { login } from '../Actions/Authentication';
 import SideBar from './SideBar/SideBar';
+import UserDetails from './UserDetails/UserDetails';
 
 class Main extends Component {
 
@@ -16,8 +17,8 @@ class Main extends Component {
                 <Header />
                 <Switch location={this.props.location}>
                     <Route path="/user" component={UserDashboard} />
+                    <Route path="/register" component={UserDetails} />
                     <Route path="/admin" component={AdminDashboard} />
-                    <Route path="/sidebar" component={SideBar} />
                     <Route exact path="/" component={Home} />
                 </Switch>
             </>

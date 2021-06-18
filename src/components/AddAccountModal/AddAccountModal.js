@@ -10,11 +10,16 @@ class AddAccountModal extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { accountType: 'Choose a Type', startingBalance: 0 };
+        this.state = { accountType: 'Choose a Type', startingBalance: 0, dba: false };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleModalClose = this.handleModalClose.bind(this);
+        this.handleCheckbox = this.handleCheckbox.bind(this);
+    }
+
+    handleCheckbox(event) {
+        this.setState({ [event.target.id]: !this.state.dba });
     }
 
     handleChange(event) {
@@ -22,7 +27,8 @@ class AddAccountModal extends Component {
     }
 
     handleClick() {
-        if(this.state.accountType == 'Checking') {
+        
+        if (this.state.accountType == 'Checking') {
             this.props.addCheckingAccount(this.props.authenticate.jwt, {
                 balance: this.state.startingBalance
             });
@@ -32,11 +38,11 @@ class AddAccountModal extends Component {
             });
         }
 
-        this.setState({ accountType: 'Choose a Type', startingBalance: 0 });
+        this.setState({ accountType: 'Choose a Type', startingBalance: 0, dba: false });
     }
 
     handleModalClose() {
-        this.setState({ accountType: 'Choose a Type', startingBalance: 0 });
+        this.setState({ accountType: 'Choose a Type', startingBalance: 0, dba: false });
     }
 
     render() {
@@ -51,15 +57,25 @@ class AddAccountModal extends Component {
                                 <h5 className="modal-title" id="addAccountModalLabel">Add Account</h5>
                             </div>
                             <div className="modal-body">
-                                <label className="form-label">Account Type</label>
-                                <DropdownButton id="accountType" title={this.state.accountType}>
-                                    <Dropdown.Item id="accountType" as="button" value="Checking" onClick={this.handleChange}>Checking</Dropdown.Item>
-                                    <Dropdown.Item id="accountType" as="button" value="Savings" onClick={this.handleChange}>Savings</Dropdown.Item>
-                                </DropdownButton>
-                                <div className="form-outline">
-                                    <label className="form-label" htmlFor="formControlDefault">Starting Balance</label>
+                                <div className="form-group">
+                                    <label className="form-label">Account Type</label>
+                                    <DropdownButton id="accountType" title={this.state.accountType}>
+                                        <Dropdown.Item id="accountType" as="button" value="Checking" onClick={this.handleChange}>Checking</Dropdown.Item>
+                                        <Dropdown.Item id="accountType" as="button" value="Savings" onClick={this.handleChange}>Savings</Dropdown.Item>
+                                    </DropdownButton>
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label" htmlFor="startingBalance">Starting Balance</label>
                                     <input type="number" id="startingBalance" className="form-control" step="0.01" min="0" value={this.state.startingBalance} onChange={this.handleChange} />
                                 </div>
+                                {this.state.accountType == 'Checking' ?
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" value="" id="dba" onChange={this.handleCheckbox} />
+                                        <label className="form-check-label" htmlFor="dba">
+                                            DBA Account
+                                        </label>
+                                    </div>
+                                    : null}
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleClick}>Add</button>

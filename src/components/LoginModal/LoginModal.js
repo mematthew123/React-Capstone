@@ -30,11 +30,17 @@ class LoginModal extends Component {
 
         this.props.login(this.state.loginUsername, this.state.loginPassword)
             .then(result => {
-                if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_ADMIN") {
+                if (result.type == ActionTypes.LOGIN && result.payload.role == "ROLE_ADMIN") {
                     this.props.history.push('/admin');
-                } else if (result.type === ActionTypes.LOGIN && result.payload.role === "ROLE_USER") {
+                } else if (result.type == ActionTypes.LOGIN && result.payload.role == "ROLE_USER") {
                     this.props.fetchAccount(result.payload.jwt)
-                    .then(this.props.history.push('/user'));
+                        .then(result => {
+                            if (result.type == ActionTypes.ACCOUNT_FAILED) {
+                                this.props.history.push('/register');
+                            } else {
+                                this.props.history.push('/user');
+                            }
+                        });
                 } else {
                     alert("Login Failed: " + result.payload);
                 }

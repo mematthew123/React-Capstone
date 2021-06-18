@@ -18,22 +18,15 @@ class UserDashboard extends React.Component {
     }
 
     render() {
-
-        if (this.props.account.account == null && this.props.authenticate.jwt == '') {
+        if (this.props.account.account == null) {
+            return (<></>);
+        } else {
             return (
-                <div className="d-flex align-items-center justify-content-center" style={{ height: '90vh' }}>
-                    <h1>You must be logged in to reach this page.</h1>
-                </div>
-            );
-        } else if (this.props.account.account != null && this.props.authenticate.jwt != '') {
-
-            return (
-
                 <div className="container-flex">
                     <div className="row" id="userDashboardDiv">
 
                         <div className="col-2">
-                            <SideBar account={this.props.account.account}/>
+                            <SideBar account={this.props.account.account} />
                         </div>
 
                         <div className="col-10" id="userDisplayDiv">
@@ -56,13 +49,53 @@ class UserDashboard extends React.Component {
                     </div>
                 </div>
             );
-        } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
-            return (
-                <UserDetails />
-            );
-        } else {
-            return (<div></div>);
         }
+
+
+        // if (this.props.account.account == null && this.props.authenticate.jwt == '') {
+        //     return (
+        //         <div className="d-flex align-items-center justify-content-center" style={{ height: '90vh' }}>
+        //             <h1>You must be logged in to reach this page.</h1>
+        //         </div>
+        //     );
+        // } else if (this.props.account.account != null && this.props.authenticate.jwt != '') {
+
+        //     return (
+
+        //         <div className="container-flex">
+        //             <div className="row" id="userDashboardDiv">
+
+        //                 <div className="col-2">
+        //                     <SideBar account={this.props.account.account}/>
+        //                 </div>
+
+        //                 <div className="col-10" id="userDisplayDiv">
+        //                     <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
+        //                     <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
+        //                     <div>
+
+        //                         <h3>How may we asisst you?</h3>
+        //                         <div className="input-group" id="dropselect">
+        //                             <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+        //                                 <option selected>Choose...</option>
+        //                                 <option value="1">Deposit to Account</option>
+        //                                 <option value="2">Widthdraw from Account</option>
+        //                                 <option value="3">Transfer between Accounts</option>
+        //                             </select>
+        //                             <button className="btn btn-outline-secondary" type="button">Button</button>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     );
+        // } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
+        //     return (
+        //         <UserDetails />
+        //     );
+        // } else {
+        //     return (<div></div>);
+        // }
     }
 }
 

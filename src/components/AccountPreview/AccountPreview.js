@@ -101,7 +101,7 @@ function AccountPreview({ accounts, type }) {
 
     const renderAccountPreview = accounts.map((account) => {
         return (
-            <li onClick={openAccountDetails}>
+            <li onClick={openAccountDetails} key={account.id}>
                 <div className="card">
                     <Balance balance={account.balance} />
 

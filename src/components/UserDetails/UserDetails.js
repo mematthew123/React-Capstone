@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postAccount } from '../../Actions/Account';
+import * as ActionTypes from '../../Actions/Types'
 import './UserDetails.css';
 
 
@@ -22,7 +23,12 @@ class UserDetails extends React.Component {
             ssn: values.target.ssn.value,
             email: values.target.email.value,
             phone: values.target.phone.value
-        });
+        })
+            .then(result => {
+                if (result.type == ActionTypes.ACCOUNT) {
+                    this.props.history.push('/user');
+                }
+            });
     }
 
     render() {
