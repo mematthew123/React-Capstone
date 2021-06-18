@@ -21,9 +21,26 @@ const postRequestConfig = (token, body) => {
     }
 };
 
-export const postChecking = (token, data) => (dispatch) => {
+export const postAddChecking = (token, data) => (dispatch) => {
 
     return fetch(URLs.addChecking, postRequestConfig(token, data))
+        .then(result => {
+            if (result.ok) {
+                return result;
+            } else {
+                var error = new Error(result.status);
+                error.response = result;
+                throw error;
+            }
+        })
+        .then(result => result.json())
+        .then(result => dispatch(AccountResponse(result)))
+        .catch(error => dispatch(AccountFailed(error)));
+}
+
+export const postDeleteChecking = (token, data) => (dispatch) => {
+
+    return fetch(URLs.deleteChecking, postRequestConfig(token, data))
         .then(result => {
             if (result.ok) {
                 return result;

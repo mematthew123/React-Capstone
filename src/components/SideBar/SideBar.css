@@ -29,10 +29,13 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-    color: #fff;
     transition: all 0.3s;
+}
+
+#sidebarHeader {
+    color: #fff;
 }
 
 #sidebar .sidebar-header {
@@ -56,7 +59,7 @@ ul ul a {
     padding-left: 2rem !important;
 }
 
-#sidebar ul li a, #sidebar ul li button {
+#sidebarMenuHeader {
     padding: 0.6rem;
     font-size: 1.1rem;
     display: block;
@@ -64,7 +67,7 @@ ul ul a {
     text-decoration: none;
 }
 
-#sidebar ul li button {
+#sidebarButton {
     background: none;
 	color: inherit;
 	border: none;
@@ -72,4 +75,10 @@ ul ul a {
     text-align: left;
 	cursor: pointer;
 	outline: inherit;
+
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
 }

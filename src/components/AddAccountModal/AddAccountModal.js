@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { postChecking } from '../../Actions/Checking';
+import { postAddChecking } from '../../Actions/Checking';
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import { postSavings } from "../../Actions/Savings";
 
@@ -10,7 +10,7 @@ class AddAccountModal extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { accountType: 'Choose a Type', startingBalance: 0, };
+        this.state = { accountType: 'Choose a Type', startingBalance: 0 };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -22,9 +22,6 @@ class AddAccountModal extends Component {
     }
 
     handleClick() {
-        console.log('account: ' + this.state.accountType);
-        console.log('amount: ' + this.state.startingBalance);
-
         if(this.state.accountType == 'Checking') {
             this.props.addCheckingAccount(this.props.authenticate.jwt, {
                 balance: this.state.startingBalance
@@ -34,6 +31,8 @@ class AddAccountModal extends Component {
                 balance: this.state.startingBalance
             });
         }
+
+        this.setState({ accountType: 'Choose a Type', startingBalance: 0 });
     }
 
     handleModalClose() {
@@ -43,7 +42,7 @@ class AddAccountModal extends Component {
     render() {
         return (
             <>
-                <button className="btn btn-primary" data-toggle="modal" data-target="#addAccountModal">Add Account</button>
+                <button data-toggle="modal" data-target="#addAccountModal" id="sidebarButton">New Account</button>
 
                 <div className="modal fade" id="addAccountModal" tabIndex="-1" role="dialog" aria-labelledby="addAccountModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
@@ -79,7 +78,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addCheckingAccount: (token, data) => dispatch(postChecking(token, data)),
+    addCheckingAccount: (token, data) => dispatch(postAddChecking(token, data)),
     addSavingsAccount: (token, data) => dispatch(postSavings(token, data))
 });
 

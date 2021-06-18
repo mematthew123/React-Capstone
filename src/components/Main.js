@@ -6,11 +6,6 @@ import Home from "./Home/Home"
 import UserDashboard from './UserDashboard/UserDashboard';
 import AdminDashboard from './AdminDashboard';
 import { login } from '../Actions/Authentication';
-import ContactForm from './ContactForm/ContactForm';
-import Footer from './Footer/Footer';
-import Sidebar from '../Sidebar_Dashboard/Sidebar';
-import { SidebarData } from '../Sidebar_Dashboard/SidebarData';
-import SubMenu from '../Sidebar_Dashboard/SubMenu';
 import SideBar from './SideBar/SideBar';
 
 class Main extends Component {
@@ -25,7 +20,6 @@ class Main extends Component {
                     <Route path="/sidebar" component={SideBar} />
                     <Route exact path="/" component={Home} />
                 </Switch>
-                <Footer />
             </>
         );
     }

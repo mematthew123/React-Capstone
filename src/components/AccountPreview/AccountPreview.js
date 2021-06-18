@@ -1,7 +1,10 @@
 import React from 'react';
-import './AccountPreview.css';
 import NumberFormat from 'react-number-format';
 import Moment from 'moment';
+import { useSelector, useDispatch } from 'react-redux';
+import { postDeleteChecking } from '../../Actions/Checking';
+import { postDeleteSavings } from '../../Actions/Savings';
+import './AccountPreview.css';
 
 function Term({ term }) {
 
@@ -32,10 +35,10 @@ function InterestRate({ interestRate }) {
                     <p>Interest Rate</p>
                 </div>
                 <div className="ml-auto">
-                    <p><NumberFormat 
-                    value={interestRate * 100}
-                    prefix='% '
-                    displayType='text' /></p>
+                    <p><NumberFormat
+                        value={interestRate * 100}
+                        prefix='% '
+                        displayType='text' /></p>
                 </div>
             </div >
         );
@@ -70,31 +73,51 @@ function Balance({ balance }) {
         return (
             <div className="d-flex card-title" >
                 <div>
-                    <h2>Balance</h2>
+                    <p>Balance</p>
                 </div>
                 <div className="ml-auto">
-                    <h2>${balance}</h2>
+                    <p>${balance}</p>
                 </div>
             </div >
         );
     }
 }
 
-function AccountPreview({ accounts }) {
+function AccountPreview({ accounts, type }) {
 
-    const renderAccountPreview = accounts.map((accounts) => {
+    const dispatch = useDispatch();
+    const jwt = useSelector((state) => state.authenticate.jwt);
+
+    const openAccountDetails = () => {
+    }
+
+    const deleteAccount = (account) => {
+        if (type == 'Checking') {
+            dispatch(postDeleteChecking(jwt, { balance: 0, id: account.id }));
+        } else if (type == 'Savings') {
+            dispatch(postDeleteSavings(jwt, { balance: 0, id: account.id }));
+        }
+    }
+
+    const renderAccountPreview = accounts.map((account) => {
         return (
-            <div className="card">
-                <Balance balance={accounts.balance} />
+            <li onClick={openAccountDetails}>
+                <div className="card">
+                    <Balance balance={account.balance} />
 
-                <div align="center"><hr style={{ borderTop: '1px solid black', width: '95%', margin: '0' }} /></div>
+                    <div align="center"><hr id="seperator" /></div>
 
-                <div className="card-body">
-                    <InterestRate interestRate={accounts.interestRate} />
-                    <OpenedOn date={accounts.openedDate} />
-                    <Term term={accounts.term} />
+                    <div className="card-body">
+                        <InterestRate interestRate={account.interestRate} />
+                        <OpenedOn date={account.openedDate} />
+                        <Term term={account.term} />
+                    </div>
+
+                    <div align="center"><hr id="seperator" /></div>
+
+                    <button className="btn btn-outline-primary" onClick={() => deleteAccount(account)}>Delete Account</button>
                 </div>
-            </div>
+            </li>
         );
     })
 

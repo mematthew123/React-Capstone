@@ -38,6 +38,23 @@ export const postSavings = (token, data) => (dispatch) => {
         .catch(error => dispatch(AccountFailed(error)));
 }
 
+export const postDeleteSavings = (token, data) => (dispatch) => {
+
+    return fetch(URLs.deleteSavings, postRequestConfig(token, data))
+        .then(result => {
+            if (result.ok) {
+                return result;
+            } else {
+                var error = new Error(result.status);
+                error.response = result;
+                throw error;
+            }
+        })
+        .then(result => result.json())
+        .then(result => dispatch(AccountResponse(result)))
+        .catch(error => dispatch(AccountFailed(error)));
+}
+
 const AccountResponse = (data) => ({
     type: ActionTypes.ACCOUNT,
     payload: data

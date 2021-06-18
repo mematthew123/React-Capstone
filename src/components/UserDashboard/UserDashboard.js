@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AccountPreview from '../AccountPreview/AccountPreview';
-import AddAccountModal from '../AddAccountModal/AddAccountModal';
 import UserDetails from '../UserDetails/UserDetails';
 import SideBar from '../SideBar/SideBar';
 import './UserDashboard.css';
-
-
 
 class UserDashboard extends React.Component {
 
@@ -18,7 +14,7 @@ class UserDashboard extends React.Component {
     }
 
     handlePrintProps() {
-        console.log(this.props);
+        // console.log(this.props);
     }
 
     render() {
@@ -37,26 +33,8 @@ class UserDashboard extends React.Component {
                     <div className="row" id="userDashboardDiv">
 
                         <div className="col-2">
-                            <SideBar />
+                            <SideBar account={this.props.account.account}/>
                         </div>
-
-
-                        {/* <div className="col-3" id="accountDisplayDiv">
-                            <div>
-                                <label>Checking Accounts</label>
-                                <AccountPreview accounts={this.props.account.account.checkingAccounts} />
-                            </div>
-
-                            <div>
-                                <label>Savings Accounts</label>
-                                <AccountPreview accounts={this.props.account.account.savingsAccounts} />
-                            </div>
-
-                            <div style={{ position: 'absolute', bottom: '0' }}>
-                                <AddAccountModal />
-                            </div>
-                        </div> */}
-
 
                         <div className="col-10" id="userDisplayDiv">
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
@@ -75,11 +53,8 @@ class UserDashboard extends React.Component {
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             );
         } else if (this.props.account.account == null && this.props.authenticate.jwt != '') {
             return (
@@ -90,9 +65,6 @@ class UserDashboard extends React.Component {
         }
     }
 }
-
-
-
 
 const mapStateToProps = state => ({
     account: state.account,

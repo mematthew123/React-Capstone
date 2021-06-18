@@ -1,8 +1,13 @@
 .card-title {
-    padding-top: 1rem;
-    padding-bottom: 0rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     padding-right: 1rem;
     padding-left: 1rem;
+    font-size: 1.3rem;
+}
+
+.card-title p {
+    margin: 0;
 }
 
 .card-body {
@@ -10,7 +15,18 @@
     padding: 0rem;
 }
 
+.card-body p {
+    margin: 0;
+}
+
 .card {
-    margin: 1rem;
+    margin: .5rem;
     padding: 0rem;
+}
+
+#seperator {
+    padding: 0;
+    margin: 0;
+    width: 95%;
+    border-top: 1px solid black;
 }

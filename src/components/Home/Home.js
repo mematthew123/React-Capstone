@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import './Home.css';
 
 function Home() {
@@ -75,6 +76,8 @@ function Home() {
             <div align="center">
                 <hr style={{ borderTop: '2px solid black', width: '90%' }} />
             </div>
+
+            <Footer />
         </>
     );
 }
