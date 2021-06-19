@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header/Header';
 import Home from "./Home/Home"
 import UserDashboard from './UserDashboard/UserDashboard';
 import AdminDashboard from './AdminDashboard';
 import { login } from '../Actions/Authentication';
-import SideBar from './SideBar/SideBar';
 import UserDetails from './UserDetails/UserDetails';
 
 class Main extends Component {

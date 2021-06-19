@@ -6,3 +6,4 @@ export const addChecking = 'http://localhost:8080/user/addCheckingAccount';
 export const deleteChecking = 'http://localhost:8080/user/deleteCheckingAccount';
 export const addSavings = 'http://localhost:8080/user/addSavingsAccount';
 export const deleteSavings = 'http://localhost:8080/user/deleteSavingsAccount';
+export const cdOfferings = "http://localhost:8080/user/cdOfferings";

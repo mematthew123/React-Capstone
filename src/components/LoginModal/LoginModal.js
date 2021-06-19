@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { login } from '../../Actions/Authentication';
 import { fetchAccount } from '../../Actions/Account';
+import { getCDOfferings } from '../../Actions/CDOfferings';
 import * as ActionTypes from '../../Actions/Types';
 
 
@@ -31,8 +32,11 @@ class LoginModal extends Component {
         this.props.login(this.state.loginUsername, this.state.loginPassword)
             .then(result => {
                 if (result.type == ActionTypes.LOGIN && result.payload.role == "ROLE_ADMIN") {
+                    this.props.cdOfferings(result.payload.jwt)
+                    .then(result => console.log(result));
                     this.props.history.push('/admin');
                 } else if (result.type == ActionTypes.LOGIN && result.payload.role == "ROLE_USER") {
+                    this.props.cdOfferings(result.payload.jwt);
                     this.props.fetchAccount(result.payload.jwt)
                         .then(result => {
                             if (result.type == ActionTypes.ACCOUNT_FAILED) {
@@ -84,7 +88,8 @@ class LoginModal extends Component {
 
 const mapDispatchToProps = dispatch => ({
     login: (username, password) => dispatch(login(username, password)),
-    fetchAccount: (token) => dispatch(fetchAccount(token))
+    fetchAccount: (token) => dispatch(fetchAccount(token)),
+    cdOfferings: (token) => dispatch(getCDOfferings(token))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(LoginModal));
