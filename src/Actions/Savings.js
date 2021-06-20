@@ -21,7 +21,7 @@ const postRequestConfig = (token, body) => {
     }
 };
 
-export const postSavings = (token, data) => (dispatch) => {
+export const postAddSavings = (token, data) => (dispatch) => {
 
     return fetch(URLs.addSavings, postRequestConfig(token, data))
         .then(result => {
@@ -56,11 +56,11 @@ export const postDeleteSavings = (token, data) => (dispatch) => {
 }
 
 const AccountResponse = (data) => ({
-    type: ActionTypes.ACCOUNT,
+    type: ActionTypes.ACCOUNTHOLDER,
     payload: data
 })
 
 const AccountFailed = (data) => ({
-    type: ActionTypes.ACCOUNT_FAILED,
+    type: ActionTypes.ACCOUNTHOLDER_FAILED,
     payload: data
 })

@@ -39,7 +39,7 @@ class LoginModal extends Component {
                     this.props.cdOfferings(result.payload.jwt);
                     this.props.fetchAccount(result.payload.jwt)
                         .then(result => {
-                            if (result.type == ActionTypes.ACCOUNT_FAILED) {
+                            if (result.type == ActionTypes.ACCOUNTHOLDER_FAILED) {
                                 this.props.history.push('/register');
                             } else {
                                 this.props.history.push('/user');

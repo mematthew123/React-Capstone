@@ -25,7 +25,7 @@ class UserDetails extends React.Component {
             phone: values.target.phone.value
         })
             .then(result => {
-                if (result.type == ActionTypes.ACCOUNT) {
+                if (result.type == ActionTypes.ACCOUNTHOLDER) {
                     this.props.history.push('/user');
                 }
             });
