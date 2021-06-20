@@ -2,33 +2,63 @@
     margin: .4rem;
 }
 
+h4 {
+background-image: url(https://image.shutterstock.com/image-vector/businessman-standing-on-ladder-telescope-600w-1911881470.jpg);
+}
+
 #userDashboardDiv {
-    height: 100vh;
+    height: 50vh;
 }
 
 #userDisplayDiv {
-    background-color: black;
+    background-color: #91a3b0;
+    color: white;
+
 
     --neon-text-color: #03A9F4;
     --neon-border-color:#F50057;
 }
 
+/* #Responsive image{
+
+   
+
+
+} */
 #welcomeMessege {
-    font-size: 10rem;
-    font-family: 'Brush Script MT', cursive;
+    font-size: 5rem;
+    font-family: sans-serif;
     color: white;
+    width: 100pt;
+    margin-left: 400px;
+}
+
+h3 { 
+    margin-left: 400px;
+    column-width: auto;
+    font-size: 3rem;
+    color: #bfdbf7;
+    font-family: sans-serif;
 }
 
 
-/* #dropselect {
-    width: 700px;
-  top: .0;
-  right: 0;
- 
-
-  } */
 
 
+
+
+#dropselect{
+
+    width: 400px;
+    margin-left: 400px;
+}
+
+#Question{  
+    margin-left: 400px;
+    position: relative;
+    color: white;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
 /* #welcomeMessege{
     font-size: 5rem;
     font-weight: 200;

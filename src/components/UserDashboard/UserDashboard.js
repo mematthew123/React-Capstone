@@ -21,19 +21,28 @@ class UserDashboard extends React.Component {
             return (<></>);
         } else {
             return (
+
+
+  
+               
+
                 <div className="container-flex">
                     <div className="row" id="userDashboardDiv">
-
                         <div className="col-2">
                             <SideBar account={this.props.account.account} />
                         </div>
 
                         <div className="col-10" id="userDisplayDiv">
                             <h1 id="welcomeMessege">Welcome {this.props.account.account.firstName}</h1>
-                            <button className="btn btn-light" onClick={this.handlePrintProps}>Print Props</button>
+
                             <div>
 
-                                <h3>How may we asisst you?</h3>
+
+                            <h3>How may we asisst you?</h3>
+                            
+                            <img src="https://image.shutterstock.com/image-vector/team-members-help-each-other-600w-1891707667.jpg" class="rounded float-left" alt="..."/>
+
+                         
                                 <div className="input-group" id="dropselect">
                                     <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                         <option selected>Choose...</option>
@@ -41,13 +50,31 @@ class UserDashboard extends React.Component {
                                         <option value="2">Widthdraw from Account</option>
                                         <option value="3">Transfer between Accounts</option>
                                     </select>
-                                    <button className="btn btn-outline-secondary" type="button">Button</button>
+                                <button className="btn btn-outline-secondary" type="button">Button</button>
+                               
+                               
+                               
+                               
+                                <div>
+
+
                                 </div>
+                                </div>
+                                </div>
+
+                          
+                    
+              
+                             
+
+                                </div>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
+
             );
+
         }
 
 
