@@ -1,15 +1,6 @@
 import * as ActionTypes from './Types';
 import * as URLs from './Urls';
 
-const getRequestConfig = (token) => {
-    return {
-        headers: {
-            'authorization': 'Bearer ' + token,
-            'Content-Type': 'application/json'
-        }
-    }
-};
-
 const postRequestConfig = (token, body) => {
     return {
         method: 'POST',
@@ -56,11 +47,11 @@ export const postDeleteChecking = (token, data) => (dispatch) => {
 }
 
 const AccountResponse = (data) => ({
-    type: ActionTypes.ACCOUNT,
+    type: ActionTypes.ACCOUNTHOLDER,
     payload: data
 })
 
 const AccountFailed = (data) => ({
-    type: ActionTypes.ACCOUNT_FAILED,
+    type: ActionTypes.ACCOUNTHOLDER_FAILED,
     payload: data
 })
