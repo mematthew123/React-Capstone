@@ -6,6 +6,10 @@ import './UserDashboard.css';
 
 class UserDashboard extends React.Component {
 
+
+  
+
+
     constructor(props) {
         super(props);
 
@@ -24,9 +28,10 @@ class UserDashboard extends React.Component {
         } else {
             return (
 
+         
+     
 
-
-
+              
 
                 <div className="container-flex">
                     <div className="row" id="userDashboardDiv">
@@ -34,46 +39,40 @@ class UserDashboard extends React.Component {
                             <SideBar account={this.props.accountHolder.accountHolder} />
                         </div>
 
-                        <div className="col-10" id="userDisplayDiv">
+
+
+
+                        <div className="col-10 has-bg-img" id="userDisplayDiv">
+
+
                             <h1 id="welcomeMessege">Welcome {this.props.accountHolder.accountHolder.firstName}</h1>
 
-                            <div>
 
+                                 <h3>How may we asisst you?</h3>
+                                 <div className="input-group" id="dropselect">
+                                <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option defaultValue>Choose...</option>
+                                    <option value="1">Deposit to Account</option>
+                                    <option value="2">Widthdraw from Account</option>
+                                    <option value="3">Transfer between Accounts</option>
+                                </select>
+                                <button className="btn btn-outline-secondary" type="button">Button</button>
 
-                                <h3>How may we asisst you?</h3>
+                                </div>
 
-                                <img src="https://image.shutterstock.com/image-vector/team-members-help-each-other-600w-1891707667.jpg" className="rounded float-left" alt="..." />
-
-
-                                <div className="input-group" id="dropselect">
-                                    <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                        <option defaultValue>Choose...</option>
-                                        <option value="1">Deposit to Account</option>
-                                        <option value="2">Widthdraw from Account</option>
-                                        <option value="3">Transfer between Accounts</option>
-                                    </select>
-                                    <button className="btn btn-outline-secondary" type="button">Button</button>
-
-
-
-
-                                    <div>
-
-
-                                    </div>
+                                
+                                
+                                
+                                </div>
+                               
                                 </div>
                             </div>
+                           
 
 
 
 
 
-
-                        </div>
-
-                    </div>
-
-                </div>
 
             );
 

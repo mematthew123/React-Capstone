@@ -3,11 +3,13 @@
 }
 
 h4 {
-background-image: url(https://image.shutterstock.com/image-vector/businessman-standing-on-ladder-telescope-600w-1911881470.jpg);
+
+    left: 300px;
+
 }
 
 #userDashboardDiv {
-    height: 50vh;
+    height: 100vh;
 }
 
 #userDisplayDiv {
@@ -43,7 +45,19 @@ h3 {
 
 
 
-
+.card {
+    box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+    border-radius: 8px;
+  }
+  
+  .card-deck {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-img-top {
+    height: 20rem;
+  }
 
 
 #dropselect{
