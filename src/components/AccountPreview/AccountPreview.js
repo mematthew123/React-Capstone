@@ -45,6 +45,37 @@ function InterestRate({ interestRate }) {
     }
 }
 
+function IsDBA({ dba }) {
+    if (dba == false) {
+        return (<></>);
+    } else {
+        return (
+            <div className="d-flex" >
+                <div>
+                    <p>DBA Account</p>
+                </div>
+            </div >
+        );
+    }
+}
+
+function IRAType({ type }) {
+    if (type == null) {
+        return (<></>);
+    } else {
+        return (
+            <div className="d-flex card-title" >
+                <div>
+                    <p>Type</p>
+                </div>
+                <div className="ml-auto">
+                    <p>${type}</p>
+                </div>
+            </div >
+        );
+    }
+}
+
 function OpenedOn({ date }) {
 
     Moment.locale('en');
@@ -96,6 +127,10 @@ function AccountPreview({ accounts, type }) {
             dispatch(postDeleteChecking(jwt, { balance: 0, id: account.id }));
         } else if (type == 'Savings') {
             dispatch(postDeleteSavings(jwt, { balance: 0, id: account.id }));
+        } else if (type == 'iraAccounts') {
+
+        } else if (type == 'cdAccounts') {
+            
         }
     }
 
@@ -111,6 +146,8 @@ function AccountPreview({ accounts, type }) {
                         <InterestRate interestRate={account.interestRate} />
                         <OpenedOn date={account.openedDate} />
                         <Term term={account.term} />
+                        <IsDBA dba={account.dba} />
+                        <IRAType type={account.type} />
                     </div>
 
                     <div align="center"><hr id="seperator" /></div>

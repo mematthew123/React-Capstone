@@ -27,36 +27,17 @@ function SideBar(props) {
                     <li>
                         <a href="#iraSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Individual Retierment Accounts</a>
                         <ul className="collapse list-unstyled" id="iraSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
+                        <AccountPreview accounts={props.account.iraAccounts} type='Individual Retierment' />
                         </ul>
                     </li>
                     <li>
                         <a href="#cdSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Certificate of Deposit</a>
                         <ul className="collapse list-unstyled" id="cdSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
+                        <AccountPreview accounts={props.account.cdAccounts} type='Certificate of Deposit' />
                         </ul>
                     </li>
                     <li>
                         <AddAccountModal />
-                    </li>
-                    <li>
-                        <button id="sidebarButton">Remove Account</button>
                     </li>
                     <li>
                         <a href="#" id="sidebarMenuHeader">Contact Us</a>

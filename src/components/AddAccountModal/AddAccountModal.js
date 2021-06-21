@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { postAddChecking } from '../../Actions/Checking';
 import { DropdownButton, Dropdown, ButtonGroup, Button } from "react-bootstrap";
 import { postAddSavings } from "../../Actions/Savings";
+import { postAddIRA } from "../../Actions/IRAAcounts";
 
 class AddAccountModal extends Component {
 
@@ -42,14 +43,20 @@ class AddAccountModal extends Component {
 
         if (this.state.accountType == 'Checking') {
             this.props.addCheckingAccount(this.props.jwt, {
-                balance: this.state.startingBalance
+                balance: this.state.startingBalance,
+                isDBA: this.state.dba
             });
         } else if (this.state.accountType == 'Savings') {
             this.props.addSavingsAccount(this.props.jwt, {
                 balance: this.state.startingBalance
             });
+        } else if (this.state.accountType == 'Individual Retirement Account') {
+            this.props.addIRAAccount(this.props.jwt, {
+                balance: this.state.startingBalance,
+                type: this.state.IRA_Type
+            });
         } else {
-            console.log(this.state);
+            // console.log(this.state);
         }
 
         this.setState({ accountType: 'Choose a Type', startingBalance: 0, dba: false, CD_ID: 0, IRA_Type: '' });
@@ -143,7 +150,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     addCheckingAccount: (token, data) => dispatch(postAddChecking(token, data)),
-    addSavingsAccount: (token, data) => dispatch(postAddSavings(token, data))
+    addSavingsAccount: (token, data) => dispatch(postAddSavings(token, data)),
+    addIRAAccount: (token, data) => dispatch(postAddIRA(token, data))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddAccountModal));
