@@ -1,15 +1,16 @@
 .transfer-form {
     display: flex;
     flex-direction: column;
-    position:relative
+    position:relative;
   }
 .transfer-form {
-    padding: .5rem;
-    margin: 1rem;
-    border: 2px solid darkblue;
-    border-radius: .25rem;
-    width: 500px;
-    background-color: #5f9ea0;
+  padding: .5rem;
+  margin: 1rem;
+  border: 2px solid darkblue;
+  border-radius: .25rem;
+  width: 500px;
+  background-color: #5f9ea0;
+
   }
 
 .label {
@@ -44,11 +45,9 @@
     border: 2px solid darkblue;
     border-radius: .25rem;
     width: 500px;
-    background-color: lightblue;
-
+    background-color: #5f9ea0;
 
   }
-
 
 
 .deposit-form {
@@ -58,11 +57,12 @@
 
 .deposit-form{
 
-    padding: .5rem;
-    margin: 1rem;
-    border: 2px solid darkblue;
-    border-radius: .25rem;
-    width: 500px;
-    background-color: lightblue;
+  padding: .5rem;
+  margin: 1rem;
+  border: 2px solid darkblue;
+  border-radius: .25rem;
+  width: 500px;
+  background-color: #5f9ea0;
+
 
   }
