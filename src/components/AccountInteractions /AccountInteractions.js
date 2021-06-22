@@ -22,6 +22,18 @@ class AccountInteractions extends Component {
     this.setState({ [event.target.id]: event.target.value });
   }
 
+
+
+  // handleClick() {
+
+  
+
+  //   console.log(this.state);
+    
+
+  //   this.setState({ accountType: 'Choose a Type', startingBalance: 0, dba: false, CD_ID: 0, IRA_Type: '' });
+  //   }
+
   render() {
     return (
       <React.Fragment>
@@ -29,9 +41,8 @@ class AccountInteractions extends Component {
 
         <DropdownButton id="interactiontype" title={this.state.interactiontype}>
           <Dropdown.Item id="interactiontype" as="button" value="Deposit" onClick={this.handleChange}>Deposit</Dropdown.Item>
-          <Dropdown.Item id="interactiontype" as="button" value="Withdrawl" onClick={this.handleChange}>Withdrawl</Dropdown.Item>
+          <Dropdown.Item id="interactiontype" as="button" value="Withdraw" onClick={this.handleChange}>Withdraw</Dropdown.Item>
           <Dropdown.Item id="interactiontype" as="button" value="Transfer" onClick={this.handleChange}>Transfer</Dropdown.Item>
-          <Dropdown.Item id="interactiontype" as="button" value="4" onClick={this.handleChange}>Individual Retirement Account</Dropdown.Item>
         </DropdownButton>
 
 
@@ -40,7 +51,7 @@ class AccountInteractions extends Component {
 
           <form>
             <div className="form-group">
-              <label for="select">Transfers</label>
+              <label for="select">Transfer From Account</label>
               <div>
                 <select id="select" name="select" required="required" className="custom-select">
                   <option value="Checking">Checking</option>
@@ -63,6 +74,8 @@ class AccountInteractions extends Component {
             </div>
             <div className="form-group">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
+              <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
+
             </div>
           </form>
 
@@ -72,7 +85,7 @@ class AccountInteractions extends Component {
 
 
 
-        {this.state.interactiontype == 'Withdrawl' ?
+        {this.state.interactiontype == 'Withdraw' ?
 
 
           <form>
@@ -91,6 +104,8 @@ class AccountInteractions extends Component {
             </div>
             <div className="form-group">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
+              <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
+
             </div>
           </form>
 
@@ -118,6 +133,8 @@ class AccountInteractions extends Component {
             </div>
             <div className="form-group">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
+              <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
+
             </div>
           </form>
 
