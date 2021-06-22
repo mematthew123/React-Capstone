@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { DropdownButton, Dropdown, ButtonGroup, Button } from "react-bootstrap";
+import './AccountInteractions.css';
 
 
 
@@ -11,7 +12,7 @@ class AccountInteractions extends Component {
 
     this.state = {
       interactions: 0,
-      interactiontype: "How can we help you",
+      interactiontype: "Account Actions",
 
     };
 
@@ -39,6 +40,12 @@ class AccountInteractions extends Component {
       <React.Fragment>
 
 
+
+
+
+
+      
+
         <DropdownButton id="interactiontype" title={this.state.interactiontype}>
           <Dropdown.Item id="interactiontype" as="button" value="Deposit" onClick={this.handleChange}>Deposit</Dropdown.Item>
           <Dropdown.Item id="interactiontype" as="button" value="Withdraw" onClick={this.handleChange}>Withdraw</Dropdown.Item>
@@ -49,8 +56,8 @@ class AccountInteractions extends Component {
         {this.state.interactiontype == 'Transfer' ?
 
 
-          <form>
-            <div className="form-group">
+          <form className ="transfer-form">
+            <div className="transfer-form">
               <label for="select">Transfer From Account</label>
               <div>
                 <select id="select" name="select" required="required" className="custom-select">
@@ -59,7 +66,7 @@ class AccountInteractions extends Component {
                 </select>
               </div>
             </div>
-            <div className="form-group">
+            <div className="transfer-form">
               <label for="select1">Transfer To Account</label>
               <div>
                 <select id="select1" name="select1" className="custom-select">
@@ -68,11 +75,11 @@ class AccountInteractions extends Component {
                 </select>
               </div>
             </div>
-            <div className="form-group">
+            <div className="transfer-form">
               <label for="text">Amount</label>
               <input id="text" name="text" type="text" className="form-control" />
             </div>
-            <div className="form-group">
+            <div className="transfer-form">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
               <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
 
@@ -89,7 +96,7 @@ class AccountInteractions extends Component {
 
 
           <form>
-            <div className="form-group">
+            <div className="withdraw-form">
               <label for="select">Withdraw From Account</label>
               <div>
                 <select id="select" name="select" required="required" className="custom-select">
@@ -98,11 +105,11 @@ class AccountInteractions extends Component {
                 </select>
               </div>
             </div>
-            <div className="form-group">
+            <div className="withdraw-form">
               <label for="text">Amount</label>
               <input id="text" name="text" type="text" className="form-control" />
             </div>
-            <div className="form-group">
+            <div className="withdraw-form">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
               <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
 
@@ -118,7 +125,7 @@ class AccountInteractions extends Component {
 
 
           <form>
-            <div className="form-group">
+            <div className="deposit-form">
               <label for="select">Deposit</label>
               <div>
                 <select id="select" name="select" required="required" className="custom-select">
@@ -127,11 +134,11 @@ class AccountInteractions extends Component {
                 </select>
               </div>
             </div>
-            <div className="form-group">
+            <div className="deposit-form">
               <label for="text">Amount</label>
               <input id="text" name="text" type="text" className="form-control" />
             </div>
-            <div className="form-group">
+            <div className="deposit-form">
               <button name="submit" type="submit" className="btn btn-primary">Submit</button>
               <button name="submit" type="submit" className="btn btn-primary">Cancel</button>
 

@@ -1,0 +1,68 @@
+.transfer-form {
+    display: flex;
+    flex-direction: column;
+    position:relative
+  }
+.transfer-form {
+    padding: .5rem;
+    margin: 1rem;
+    border: 2px solid darkblue;
+    border-radius: .25rem;
+    width: 500px;
+    background-color: #5f9ea0;
+  }
+
+.label {
+    margin-top: .5rem;
+  }
+
+
+/* .custom-select{
+  
+    margin: 1rem;
+    border: 2px solid darkblue;
+    border-radius: .25rem;
+    width: 400px;
+
+    display: inherit;
+    flex-direction: column;
+  } */
+
+
+
+.withdraw-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+.withdraw-form{
+    padding: .5rem;
+    margin: 1rem;
+    border: 2px solid darkblue;
+    border-radius: .25rem;
+    width: 500px;
+    background-color: lightblue;
+
+
+  }
+
+
+
+.deposit-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+.deposit-form{
+
+    padding: .5rem;
+    margin: 1rem;
+    border: 2px solid darkblue;
+    border-radius: .25rem;
+    width: 500px;
+    background-color: lightblue;
+
+  }

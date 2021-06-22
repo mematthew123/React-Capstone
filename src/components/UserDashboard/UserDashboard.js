@@ -50,7 +50,6 @@ class UserDashboard extends React.Component {
 
 
                                  <h3>How may we asisst you?</h3>
-                                 <div className="input-group" id="dropselect">
                                <AccountInteractions/>
                 
 
@@ -61,7 +60,6 @@ class UserDashboard extends React.Component {
                                 </div>
                                
                                 </div>
-                            </div>
                            
 
 
