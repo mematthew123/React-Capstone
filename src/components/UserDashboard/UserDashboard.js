@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import AccountInteractions from '../AccountInteractions /AccountInteractions';
 import SideBar from '../SideBar/SideBar';
 import './UserDashboard.css';
 
@@ -22,9 +23,9 @@ class UserDashboard extends React.Component {
 
     render() {
         if (this.props.accountHolder.accountHolder == null) {
-            return (<>
+            return (<React.Fragment>
                 <button onClick={this.handlePrintProps}>Print props</button>
-            </>);
+            </React.Fragment>);
         } else {
             return (
 
@@ -50,17 +51,11 @@ class UserDashboard extends React.Component {
 
                                  <h3>How may we asisst you?</h3>
                                  <div className="input-group" id="dropselect">
-                                <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                    <option defaultValue>Choose...</option>
-                                    <option value="1">Deposit to Account</option>
-                                    <option value="2">Widthdraw from Account</option>
-                                    <option value="3">Transfer between Accounts</option>
-                                </select>
-                                <button className="btn btn-outline-secondary" type="button">Button</button>
+                               <AccountInteractions/>
+                
 
-                                </div>
+                               </div>
 
-                                
                                 
                                 
                                 </div>
