@@ -50,7 +50,7 @@ class UserDashboard extends React.Component {
 
 
                                  <h3>How may we asisst you?</h3>
-                               <AccountInteractions/>
+                              <AccountInteractions/> 
                 
 
                                </div>
