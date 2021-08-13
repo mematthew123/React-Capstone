@@ -1,5 +1,5 @@
 export const login = 'https://serene-hamlet-61948.herokuapp.com/';
-export const signUp = 'https://6115b76e3cfe0200072006a0--vigorous-lamarr-15a05b.netlify.app/';
+export const signUp = 'https://serene-hamlet-61948.herokuapp.com/';
 
 export const account = 'https://serene-hamlet-61948.herokuapp.com/';
 
