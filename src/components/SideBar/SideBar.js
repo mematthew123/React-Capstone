@@ -3,48 +3,85 @@ import AccountPreview from '../AccountPreview/AccountPreview';
 import AddAccountModal from '../AddAccountModal/AddAccountModal';
 import './SideBar.css'
 
+
+
+window.addEventListener('DOMContentLoaded', event => {
+
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+});
+
+
 function SideBar(props) {
     return (
-        <div className="wrapper">
-            <nav id="sidebar">
-                <div className="sidebar-header">
-                    <h3 id="sidebarHeader">Accounts</h3>
+        <div classNameName="d-flex" id="wrapper">
+       
+            <div className="border-end bg-white" id="sidebar-wrapper">
+                <div className="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+                <div className="list-group list-group-flush">
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
                 </div>
-
-                <ul className="list-unstyled components" id="sidebarMenu">
-                    <li>
-                        <a href="#checkingSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Checking</a>
-                        <ul className="collapse list-unstyled" id="checkingSubmenu">
-                            <AccountPreview accounts={props.account.checkingAccounts} type='Checking' />
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#savingsSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Savings</a>
-                        <ul className="collapse list-unstyled" id="savingsSubmenu">
-                            <AccountPreview accounts={props.account.savingsAccounts} type='Savings' />
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#iraSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Individual Retierment Accounts</a>
-                        <ul className="collapse list-unstyled" id="iraSubmenu">
-                        <AccountPreview accounts={props.account.iraAccounts} type='Individual Retierment' />
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#cdSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle" id="sidebarMenuHeader">Certificate of Deposit</a>
-                        <ul className="collapse list-unstyled" id="cdSubmenu">
-                        <AccountPreview accounts={props.account.cdAccounts} type='Certificate of Deposit' />
-                        </ul>
-                    </li>
-                    <li>
-                        <AddAccountModal />
-                    </li>
-                    <li>
-                        <a href="#" id="sidebarMenuHeader">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
+            </div>
+    
+            <div id="page-content-wrapper">
+       
+                <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div className="container-fluid">
+                        <button className="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li className="nav-item active"><a className="nav-link" href="#!">Home</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#!">Link</a></li>
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a className="dropdown-item" href="#!">Action</a>
+                                        <a className="dropdown-item" href="#!">Another action</a>
+                                        <div className="dropdown-divider"></div>
+                                        <a className="dropdown-item" href="#!">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+             
+                <div className="container-fluid">
+                    <h1 className="mt-4">Simple Sidebar</h1>
+                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>
+                        . The top navbar is optional, and just for demonstration. Just create an element with the
+                        <code>#sidebarToggle</code>
+                        ID which will toggle the menu when clicked.
+                    </p>
+                </div>
+            </div>
         </div>
+
+
+
+        
+       
     );
 }
 
