@@ -1,5 +1,5 @@
-export const login = 'https://serene-hamlet-61948.herokuapp.com/';
-export const signUp = 'https://serene-hamlet-61948.herokuapp.com/';
+export const login = 'https://serene-hamlet-61948.herokuapp.com /login';
+export const signUp = 'https://serene-hamlet-61948.herokuapp.com/signUp';
 
 export const account = 'https://serene-hamlet-61948.herokuapp.com/';
 
