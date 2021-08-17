@@ -6,7 +6,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="page-footer font-small" id="footer" style={{ background: "linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%) " }}>
+            <footer className="page-footer font-small" id="footer">
 
                 <div align="center">
                     <ContactForm />

@@ -1,6 +1,6 @@
 .register{
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-  min-height: 82.6vh;
+  background-color: #0062cc;
+
   align-items: center;
 }
 
@@ -14,8 +14,7 @@
   margin-top: 15%;
   margin-bottom: 5%;
   width: 20%;
-  -webkit-animation: mover 2s infinite  alternate;
-  animation: mover 1s infinite  alternate;
+ 
 }
 
 @-webkit-keyframes mover {
