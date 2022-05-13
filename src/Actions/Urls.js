@@ -10,6 +10,6 @@ export const addSavings = ' https://meritback.herokuapp.com/user/addSavingsAccou
 export const deleteSavings = ' https://meritback.herokuapp.com/user/deleteSavingsAccount';
 
 export const addIRA = ' https://meritback.herokuapp.com/user/addIRAAccount';
-export const deleteIRA = ' https://meritback.herokuapp.com/user/deleteIRAAccount';
+export const deleteIRA = 'https://meritback.herokuapp.com/user/deleteIRAAccount';
 
 export const cdOfferings = " https://meritback.herokuapp.com/user/cdOfferings";
