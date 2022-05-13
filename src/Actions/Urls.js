@@ -1,15 +1,15 @@
-export const login = 'http://localhost:8080/authenticate';
-export const signUp = 'http://localhost:8080/authenticate/createUser';
+export const login = 'https://meritback.herokuapp.com/authenticate';
+export const signUp = ' https://meritback.herokuapp.com/authenticate/createUser';
 
-export const account = 'http://localhost:8080/user/AccountHolder';
+export const account = ' https://meritback.herokuapp.com/user/AccountHolder';
 
-export const addChecking = 'http://localhost:8080/user/addCheckingAccount';
-export const deleteChecking = 'http://localhost:8080/user/deleteCheckingAccount';
+export const addChecking = ' https://meritback.herokuapp.com/user/addCheckingAccount';
+export const deleteChecking = ' https://meritback.herokuapp.com/user/deleteCheckingAccount';
 
-export const addSavings = 'http://localhost:8080/user/addSavingsAccount';
-export const deleteSavings = 'http://localhost:8080/user/deleteSavingsAccount';
+export const addSavings = ' https://meritback.herokuapp.com/user/addSavingsAccount';
+export const deleteSavings = ' https://meritback.herokuapp.com/user/deleteSavingsAccount';
 
-export const addIRA = 'http://localhost:8080/user/addIRAAccount';
-export const deleteIRA = 'http://localhost:8080/user/deleteIRAAccount';
+export const addIRA = ' https://meritback.herokuapp.com/user/addIRAAccount';
+export const deleteIRA = ' https://meritback.herokuapp.com/user/deleteIRAAccount';
 
-export const cdOfferings = "http://localhost:8080/user/cdOfferings";
+export const cdOfferings = " https://meritback.herokuapp.com/user/cdOfferings";
